@@ -45,7 +45,7 @@ const SkillsDescription = () => {
         viewport={{ once: true }}
         className="text-sm font-light"
       >
-        I specialize in building scalable backend systems using Go and Python,
+        I specialize in building scalable backend systems using Node.js, Go and Python,
         with expertise in microservices architecture, databases, and cloud deployment.
       </motion.p>
 
@@ -56,9 +56,9 @@ const SkillsDescription = () => {
             transition={{ duration: 1 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-medium text-lg text-neutral-600 dark:text-neutral-200 mt-5"
+            className="font-medium text-lg text-blue-600 dark:text-blue-400 mt-5"
           >
-            Go (Golang)
+            Frontend Development
           </motion.h3>
           <motion.p
             initial={{ x: 50, opacity: 0 }}
@@ -67,17 +67,17 @@ const SkillsDescription = () => {
             viewport={{ once: true }}
             className="text-sm font-light"
           >
-            My primary backend language for building high-performance microservices,
-            APIs, and concurrent systems with excellent scalability.
+            Proficient in building modern, responsive web applications using React.js, Next.js, and Tailwind CSS,
+            with focus on user experience and performance optimization.
           </motion.p>
           <motion.h3
             initial={{ x: 50, opacity: 0 }}
             transition={{ duration: 1 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-medium text-lg text-neutral-600 dark:text-neutral-200 mt-5"
+            className="font-medium text-lg text-blue-600 dark:text-blue-400 mt-5"
           >
-            Python & FastAPI
+            AI Tools & Systems Integration
           </motion.h3>
           <motion.p
             initial={{ x: 50, opacity: 0 }}
@@ -86,8 +86,8 @@ const SkillsDescription = () => {
             viewport={{ once: true }}
             className="text-sm font-light"
           >
-            Experienced in building modern APIs with FastAPI, data processing,
-            and AI/ML integrations with excellent performance and documentation.
+            Experienced in integrating AI tools and building intelligent systems using OpenAI API, GPT models,
+            and developing AI-powered applications for automation and data processing.
           </motion.p>
         </div>
       </div>

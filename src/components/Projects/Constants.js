@@ -3,21 +3,21 @@ export const projects = [
   {
     title: "QuickEval - AI Answer Sheet Evaluator",
     description:
-      "Built a microservice-based backend using FastAPI and deployed on containerized infrastructure with Docker. Integrated GPT-4 Vision for NLP and real-time evaluation.",
-    tech: ["FastAPI", "Docker", "GPT-4 Vision", "Python"],
+      "QuickEval is an intelligent web application that automates the evaluation of student answer sheets using AI, helping educators save time and maintain consistency in grading. Built with React.js, Node.js, and MongoDB, it leverages the OpenAI API to assess answers, provide detailed scoring with confidence levels and remarks, and generate comprehensive evaluation reports.",
+    tech: ["React.js", "Node.js", "MongoDB", "OpenAI API"],
     code: "https://github.com/adilzubair/QuickEval",
     live: "",
-    thumnail: null,
+    thumbnail: "/images/projects/QuickEval.png",
     featured: true,
   },
   {
     title: "Crashchain - Digital Forensics Platform",
     description:
-      "Designed a distributed architecture for forensic crash data storage using blockchain (IPFS) and REST APIs. Focused on data integrity and secure transmission.",
-    tech: ["Blockchain", "IPFS", "REST APIs"],
+      "A secure, blockchain-integrated platform for capturing and verifying vehicle crash data. This tool ensures tamper-proof storage and validation of OBD data and crash footage using Ethereum smart contracts. It features real-time data collection, anomaly detection, and a user-friendly dashboard for investigators.",
+    tech: ["Node.js", "Ethereum", "Web3.js", "Truffle", "Smart Contracts"],
     code: "https://github.com/Project-SCE/Crashchain",
     live: "",
-    thumnail: null,
+    thumbnail: "/images/projects/Crashchain.png",
     featured: true,
   },
   {
@@ -27,7 +27,18 @@ export const projects = [
     tech: ["GPT", "WhatsApp API", "REST APIs", "Python"],
     code: "https://github.com/adilzubair/Yukthi_hackathon",
     live: "",
-    thumnail: null,
+    // thumbnail: "/images/projects/footbot",
+    thumbnail: null,
+    featured: false,
+  },
+  {
+    title: "PropEase - Real Estate SaaS Landing Page",
+    description:
+      "PropEase is a modern, responsive landing page designed for real estate SaaS platforms. Built with React, Vite, and Tailwind CSS, it offers a clean UI to showcase property listings, agent profiles, and real estate services. The project emphasizes performance and scalability, making it ideal for startups and real estate tech solutions.",
+    tech: ["React", "Vite", "Tailwind CSS", "SaaS"],
+    code: "https://github.com/adilzubair/propease",
+    live: "",
+    thumbnail: "/images/projects/propease.png",
     featured: true,
   },
   {
@@ -37,8 +48,8 @@ export const projects = [
     tech: ["IBM Cognos", "Dashboards", "REST APIs"],
     code: "https://github.com/adilzubair/IBM-Hack-Challenge",
     live: "",
-    thumnail: null,
-    featured: true,
+    thumbnail: null,
+    featured: false,
   },
   {
     title: "LedgerTrue - Anomaly Detection Dashboard",
@@ -47,8 +58,8 @@ export const projects = [
     tech: ["FastAPI", "React", "Excel", "Python"],
     code: "https://github.com/adilzubair/Ledger-True",
     live: "",
-    thumnail: null,
-    featured: true,
+    thumbnail: null,
+    featured: false,
   },
 ];
 

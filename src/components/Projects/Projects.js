@@ -31,7 +31,7 @@ const Projects = () => {
             <motion.div key={i} variants={fadeTop} {...motionStep}>
               <Featured
                 live={e.live}
-                thumbnail={e.thumnail}
+                thumbnail={e.thumbnail}
                 code={e.code}
                 title={e.title}
                 description={e.description}
@@ -47,7 +47,7 @@ const Projects = () => {
           .map((e, i) => (
             <ProjectCard
               live={e.live}
-              thumbnail={e.thumnail}
+              thumbnail={e.thumbnail}
               code={e.code}
               title={e.title}
               description={e.description}

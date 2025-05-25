@@ -36,11 +36,13 @@ const ProjectCard = ({ live, thumbnail, code, title, description, tech }) => {
     >
       <div>
         <a href={`${live || code}`}>
-          <div className="h-[200px] w-full relative rounded-xl overflow-hidden bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+          <div className={`h-[200px] w-full relative rounded-xl overflow-hidden flex items-center justify-center ${
+            thumbnail ? 'bg-white dark:bg-neutral-800' : 'bg-gradient-to-br from-blue-500 to-blue-700'
+          }`}>
             {thumbnail ? (
               <img
                 src={thumbnail}
-                className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+                className="w-full h-full object-contain transition-all duration-300 group-hover:scale-105 group-hover:rotate-1"
                 alt="Project thumbnail"
               />
             ) : (
@@ -88,7 +90,7 @@ const ProjectCard = ({ live, thumbnail, code, title, description, tech }) => {
         </div>
 
         <h1 className="text-xl font-medium mb-1"> {title} </h1>
-        <p className="dark:text-neutral-200 text-neutral-600 text-sm">
+        <p className="dark:text-neutral-200 text-neutral-600 text-sm text-justify">
           {" "}
           {description}{" "}
         </p>

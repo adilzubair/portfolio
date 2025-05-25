@@ -50,8 +50,9 @@ const About = () => {
                 <HiOutlineBuildingOffice className="h-5 w-5 text-white" />
               </div>
             }
-            title="May 2025 - Present"
-            desc="Software Engineer at Cooee (Remote, Australia-based). Built and maintained backend services using Golang, with message-driven architecture powered by RabbitMQ.
+            title="Software Engineer at Cooee"
+            subtitle="May 2025 - Present | Remote, Australia"
+            desc="Built and maintained backend services using Golang, with message-driven architecture powered by RabbitMQ.
 Worked extensively with PostgreSQL, implementing optimized queries and schema migrations.
 Integrated AWS services including CloudWatch, Elastic Beanstalk, CodePipeline, and security tools like WAF
 and Shield to ensure resilient deployment."
@@ -62,8 +63,9 @@ and Shield to ensure resilient deployment."
                 <HiOutlineBuildingOffice className="h-5 w-5 text-white" />
               </div>
             }
-            title="May 2024 - July 2024"
-            desc="Industrial Trainee at Intel Corporation (Bangalore, India). Optimized the TinyLlama model with Intel® OpenVINO™ for low-latency AI inference on edge devices.
+            title="Industrial Trainee at Intel Corporation"
+            subtitle="May 2024 - July 2024 | Bangalore, India"
+            desc="Optimized the TinyLlama model with Intel® OpenVINO™ for low-latency AI inference on edge devices.
 Built and deployed scalable backend microservices using FastAPI and Docker, integrated with REST APIs for
 real-time chatbot simulation using Gradio."
           />
@@ -73,10 +75,22 @@ real-time chatbot simulation using Gradio."
                 <HiOutlineBuildingOffice className="h-5 w-5 text-white" />
               </div>
             }
-            title="Aug 2023 - Sep 2023"
-            desc="Data Analyst Intern at Al Wafaa Group (Dubai, UAE). Automated lead processing workflows and supported CRM data pipelines with advanced reporting.
+            title="Data Analyst Intern at Al Wafaa Group"
+            subtitle="Aug 2023 - Sep 2023 | Dubai, UAE"
+            desc="Automated lead processing workflows and supported CRM data pipelines with advanced reporting.
 Built interactive dashboards using IBM Cognos, MS Excel, and Python, improving decision-making and data
 transparency."
+          />
+          <FeaturedCard
+            icon={
+              <div className="rounded-xl bg-blue-600 p-3.5 dark:bg-blue-400">
+                <HiOutlineBuildingOffice className="h-5 w-5 text-white" />
+              </div>
+            }
+            title="Research Intern at National Chung Cheng University"
+            subtitle="July 2024 - September 2024 | Chiayi, Taiwan"
+            desc="Conducted research on advanced machine learning algorithms and their applications in real-world scenarios.
+Collaborated with faculty on developing innovative solutions for data processing and analysis, contributing to academic publications and research projects."
           />
           <h4 className="text-2xl font-medium text-blue-600 dark:text-blue-400 mt-6 mb-2">
             <Reveal width="100%">Education</Reveal>

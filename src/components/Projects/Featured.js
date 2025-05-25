@@ -15,12 +15,14 @@ const Featured = ({
     return (
       <div className="col-span-12 sm:col-span-7 relative ">
         <a href={`${live || code}`}>
-          <div className="h-[350px] w-full relative rounded-xl overflow-hidden bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+          <div className={`h-[350px] w-full relative rounded-xl overflow-hidden flex items-center justify-center ${
+            thumbnail ? 'bg-white dark:bg-neutral-800' : 'bg-gradient-to-br from-blue-500 to-blue-700'
+          }`}>
             {thumbnail ? (
               <img
                 src={thumbnail}
                 layout="fill"
-                className="w-full h-full transition-all object-cover duration-300 group-hover:scale-110 group-hover:rotate-3"
+                className="w-full h-full transition-all object-contain duration-300 group-hover:scale-105 group-hover:rotate-1"
                 alt="Project thumbnail"
               />
             ) : (
@@ -28,8 +30,6 @@ const Featured = ({
                 {title?.charAt(0) || "P"}
               </div>
             )}
-
-            <div className="absolute top-0 bottom-0 left-0 right-0 bg-neutral-900/50 transition-all duration-300 cursor-pointer hover:opacity-0" />
           </div>
         </a>
       </div>
@@ -39,18 +39,20 @@ const Featured = ({
   const __renderContent = () => {
     return (
       <div
-        className={`col-span-12 sm:col-span-5 text-right sm:absolute sm:left-[50%]  ${
-          secondary && `!relative z-30 !left-0 !text-start sm:w-[120%]`
+        className={`col-span-12 sm:col-span-5 ${
+          secondary 
+            ? `text-left` 
+            : `text-right sm:relative sm:z-10`
         }`}
       >
-        <div>
+        <div className="mt-4 sm:mt-0">
           <p className="text-blue-600 dark:text-blue-400"> Highlight </p>
-          <h1 className="text-3xl font-medium text-neutral-700 dark:text-neutral-300">
+          <h1 className="text-2xl sm:text-3xl font-medium text-neutral-700 dark:text-neutral-300 mb-4">
             {title}
           </h1>
 
-          <div className="my-6 p-6 bg-gray-50 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 shadow-xl shadow-gray-400/50 dark:shadow-black/30 rounded-xl hidden sm:block">
-            <p> {description && description} </p>
+          <div className="my-4 sm:my-6 p-4 sm:p-6 bg-gray-50 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 shadow-xl shadow-gray-400/50 dark:shadow-black/30 rounded-xl">
+            <p className="text-sm sm:text-base text-justify"> {description && description} </p>
           </div>
 
           <div
