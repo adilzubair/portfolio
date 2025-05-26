@@ -5,7 +5,7 @@ const PreLoader = (props) => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-[#050505]">
       <HashLoader
-        color={"#FFBF00"}
+        color={"#2563eb"}
         loading={props.loading}
         size={70}
         aria-label="Loading Spinner"
