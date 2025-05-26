@@ -41,7 +41,7 @@ const Projects = () => {
             </motion.div>
           ))}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 gap-y-6 sm:gap-y-8 my-8 sm:my-10 px-4 sm:px-5 md:px-10 lg:px-20 2xl:px-40">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 gap-y-8 sm:gap-y-10 my-8 sm:my-10 px-4 sm:px-5 md:px-10 lg:px-20 2xl:px-40">
         {projects
           .filter((e) => e.featured !== true)
           .map((e, i) => (
