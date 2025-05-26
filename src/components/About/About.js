@@ -29,19 +29,19 @@ const About = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="md:px-20 px-5 flex flex-col md:flex-row gap-10"
+        className="w-full px-4 sm:px-5 md:px-20 flex flex-col gap-6 md:gap-10"
       >
         <div className="flex-1">
-          <h2 className="text-3xl font-bold mb-2">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-2 text-center sm:text-left">
             Hi, I am Muhamed Adil Edavana Valappil
           </h2>
-          <p className="mb-4 text-lg">
+          <p className="mb-4 text-base sm:text-lg text-center sm:text-left leading-relaxed">
             Software Engineer based in Dubai, UAE. Experienced in building
             scalable backend and frontend systems with Go, Python, JavaScript, and
             cloud-native tools. Passionate about AI, automation, and clean, modern
             web experiences.
           </p>
-          <h4 className="text-2xl font-medium text-blue-600 dark:text-blue-400 mt-6 mb-2">
+          <h4 className="text-xl sm:text-2xl font-medium text-blue-600 dark:text-blue-400 mt-6 mb-3 sm:mb-2 text-center sm:text-left">
             <Reveal width="100%">Work Experience</Reveal>
           </h4>
           <FeaturedCard
@@ -92,7 +92,7 @@ transparency."
             desc="Conducted research on advanced machine learning algorithms and their applications in real-world scenarios.
 Collaborated with faculty on developing innovative solutions for data processing and analysis, contributing to academic publications and research projects."
           />
-          <h4 className="text-2xl font-medium text-blue-600 dark:text-blue-400 mt-6 mb-2">
+          <h4 className="text-xl sm:text-2xl font-medium text-blue-600 dark:text-blue-400 mt-6 mb-3 sm:mb-2 text-center sm:text-left">
             <Reveal width="100%">Education</Reveal>
           </h4>
           <FeaturedCard

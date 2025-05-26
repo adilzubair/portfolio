@@ -10,7 +10,7 @@ const SkillsDescription = () => {
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className="font-medium text-2xl text-blue-600 dark:text-blue-400 mt-5 mb-5"
+        className="font-medium text-xl sm:text-2xl text-blue-600 dark:text-blue-400 mt-4 sm:mt-5 mb-3 sm:mb-5"
       >
         <Reveal width="100%">
           A look at all the programming languages, libraries, and tools I've
@@ -22,7 +22,7 @@ const SkillsDescription = () => {
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className="text-sm font-light"
+        className="text-xs sm:text-sm font-light leading-relaxed"
       >
         In the expansive field of software development, I've acquired diverse
         experience in &nbsp;
@@ -34,7 +34,7 @@ const SkillsDescription = () => {
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className="font-medium text-lg text-blue-600 dark:text-blue-400 mt-5"
+        className="font-medium text-base sm:text-lg text-blue-600 dark:text-blue-400 mt-4 sm:mt-5"
       >
         <Reveal width="100%">Backend & Infrastructure</Reveal>
       </motion.h2>
@@ -43,7 +43,7 @@ const SkillsDescription = () => {
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className="text-sm font-light"
+        className="text-xs sm:text-sm font-light leading-relaxed"
       >
         I specialize in building scalable backend systems using Node.js, Go and Python,
         with expertise in microservices architecture, databases, and cloud deployment.
@@ -56,7 +56,7 @@ const SkillsDescription = () => {
             transition={{ duration: 1 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-medium text-lg text-blue-600 dark:text-blue-400 mt-5"
+            className="font-medium text-base sm:text-lg text-blue-600 dark:text-blue-400 mt-4 sm:mt-5"
           >
             Frontend Development
           </motion.h3>
@@ -65,7 +65,7 @@ const SkillsDescription = () => {
             transition={{ duration: 1 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-light"
+            className="text-xs sm:text-sm font-light leading-relaxed"
           >
             Proficient in building modern, responsive web applications using React.js, Next.js, and Tailwind CSS,
             with focus on user experience and performance optimization.
@@ -75,7 +75,7 @@ const SkillsDescription = () => {
             transition={{ duration: 1 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-medium text-lg text-blue-600 dark:text-blue-400 mt-5"
+            className="font-medium text-base sm:text-lg text-blue-600 dark:text-blue-400 mt-4 sm:mt-5"
           >
             AI Tools & Systems Integration
           </motion.h3>
@@ -84,7 +84,7 @@ const SkillsDescription = () => {
             transition={{ duration: 1 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-light"
+            className="text-xs sm:text-sm font-light leading-relaxed"
           >
             Experienced in integrating AI tools and building intelligent systems using OpenAI API, GPT models,
             and developing AI-powered applications for automation and data processing.

@@ -15,7 +15,7 @@ const Projects = () => {
       subtitle="Projects upon which I have worked on."
       className="relative"
     >
-      <div className="space-y-5 lg:space-y-10 px-5 md:px-10 lg:px-20 2xl:px-40">
+      <div className="space-y-6 sm:space-y-5 lg:space-y-10 px-4 sm:px-5 md:px-10 lg:px-20 2xl:px-40">
         {/* Right SVG */}
         <img
           src={RightSvg}
@@ -41,7 +41,7 @@ const Projects = () => {
             </motion.div>
           ))}
       </div>
-      <div className="grid grid-cols-8 2xl:grid-cols-12 gap-6 gap-y-8 my-10 px-5 md:px-10 lg:px-20 2xl:px-40">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 gap-y-6 sm:gap-y-8 my-8 sm:my-10 px-4 sm:px-5 md:px-10 lg:px-20 2xl:px-40">
         {projects
           .filter((e) => e.featured !== true)
           .map((e, i) => (
@@ -56,15 +56,17 @@ const Projects = () => {
             />
           ))}
       </div>
-      <span>
-        For More Projects and Other work visit my{" "}
-        <a
-          href="https://github.com/adilzubair?tab=repositories&q=&type=source&language=&sort="
-          style={{ fontWeight: "bold", color: "red" }}
-        >
-          GitHub
-        </a>
-      </span>
+      <div className="text-center px-4 sm:px-5">
+        <span className="text-sm sm:text-base">
+          For More Projects and Other work visit my{" "}
+          <a
+            href="https://github.com/adilzubair?tab=repositories&q=&type=source&language=&sort="
+            className="font-bold text-red-500 hover:text-red-600 transition-colors"
+          >
+            GitHub
+          </a>
+        </span>
+      </div>
     </Section>
   );
 };

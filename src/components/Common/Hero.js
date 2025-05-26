@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center items-center p-5 text-center pt-32 z-30 overflow-y-hidden overflow-x-hidden"
+      className="relative min-h-screen flex flex-col justify-center items-center p-4 sm:p-5 text-center pt-28 sm:pt-32 z-30 overflow-y-hidden overflow-x-hidden"
     >
       {!sliderTextLoader && <BackgroundCircles />}
       {sliderTextLoader && (
@@ -49,7 +49,7 @@ const Hero = () => {
         initial={animation.hide}
         animate={animation.show}
         transition={{ delay: 0.5 }}
-        className="text-sm pt-3 md:text-xl text-blue-600 dark:text-blue-400 font-bold z-0"
+        className="text-sm sm:text-base pt-3 md:text-xl text-blue-600 dark:text-blue-400 font-bold z-0"
       >
         Software Engineer
       </motion.h2>
@@ -58,7 +58,7 @@ const Hero = () => {
         initial={animation.hide}
         animate={animation.show}
         transition={{ delay: 0.5 }}
-        className="py-3 text-xl md:text-3xl lg:text-5xl text-center font-bold leading-[1] z-0"
+        className="py-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center font-bold leading-[1.1] z-0"
       >
         <span className="text-slate-700 dark:text-slate-200">
           <TypeAnimation
@@ -74,8 +74,8 @@ const Hero = () => {
         <ActiveComponent />
       </motion.div>
 
-      <div className="mt-20 mb-0 down-arrow z-0">
-        <FaArrowDown className="text-blue-600 dark:text-blue-400 text-3xl animate-bounce " />
+      <div className="mt-16 sm:mt-20 mb-0 down-arrow z-0">
+        <FaArrowDown className="text-blue-600 dark:text-blue-400 text-2xl sm:text-3xl animate-bounce " />
       </div>
     </section>
   );
