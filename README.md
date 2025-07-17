@@ -1,7 +1,7 @@
 # Muhamed Adil Portfolio Website
 
 ## Live
-[https://adilzubair.github.io/](https://adilzubair.github.io/)
+[https://muhamedadil.com](https://muhamedadil.com)
 
 ## About
 Portfolio of Muhamed Adil Edavana Valappil, Software Engineer based in Dubai, UAE. 
