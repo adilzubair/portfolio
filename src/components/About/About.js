@@ -50,8 +50,48 @@ const About = () => {
                 <HiOutlineBuildingOffice className="h-5 w-5 text-white" />
               </div>
             }
+            title="Software Developer at Greentruth Technology"
+            subtitle="Aug 2025 - Present | Dubai, UAE"
+            desc={
+              <ul className="list-disc pl-5 space-y-2 text-left">
+                <li>
+                  Developed full-stack applications using Python and JavaScript,
+                  with React frontends and FastAPI/gRPC backends for secure
+                  transaction management and distributed system operations.
+                </li>
+                <li>
+                  Built interactive chatbots and API clients for real-time
+                  operations, authentication, and data processing across
+                  distributed networks.
+                </li>
+                <li>
+                  Designed and implemented Bitcoin wallet applications, supporting
+                  multisig wallets, transaction history, and fee estimation.
+                </li>
+                <li>
+                  Developed a Lightning Network Telegram bot to manage node
+                  operations, invoices, and peer connections via LND APIs.
+                </li>
+                <li>
+                  Created and maintained REST/gRPC APIs for Lightning interactions,
+                  enabling payment processing, routing, and custom messaging.
+                </li>
+                <li>
+                  Implemented simulations for consensus algorithms, Bitcoin mining
+                  (proof-of-work), and transaction validation scripts, integrating
+                  databases and cryptographic libraries.
+                </li>
+              </ul>
+            }
+          />
+          <FeaturedCard
+            icon={
+              <div className="rounded-xl bg-blue-600 p-3.5 dark:bg-blue-400">
+                <HiOutlineBuildingOffice className="h-5 w-5 text-white" />
+              </div>
+            }
             title="Software Engineer at Cooee"
-            subtitle="May 2025 - Present | Remote, Australia"
+            subtitle="May 2025 - July 2025 | Remote, Australia"
             desc={
               <ul className="list-disc pl-5 space-y-2 text-left">
                 <li>
