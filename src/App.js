@@ -7,6 +7,7 @@ import HeaderNav from "./components/Header/HeaderNav";
 import ErrorBoundary from "./components/Common/ErrorBoundary";
 import BackToTop from "./components/Common/BackToTop";
 import SkipToContent from "./components/Common/SkipToContent";
+import { Analytics } from "@vercel/analytics/react";
 
 import Projects from "./components/Projects/Projects";
 import { Toaster } from "react-hot-toast";
@@ -54,7 +55,7 @@ function App() {
             <Contact />
             <AppFooter />
             <BackToTop />
-            
+            <Analytics />
           </main>
         )}
       </div>
