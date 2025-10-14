@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import LazyImage from "../Common/LazyImage";
 //
 import { BsFillBookmarkStarFill } from "react-icons/bs";
 import { motionStep } from "./Motion";
@@ -32,18 +33,18 @@ const ProjectCard = ({ live, thumbnail, code, title, description, tech }) => {
         },
       }}
       {...motionStep}
-      className="w-full bg-gray-50 dark:bg-neutral-900 rounded-xl p-3 sm:p-4 group shadow-lg shadow-gray-400/50 dark:shadow-black/30 z-20"
+      className="w-full bg-gradient-to-br from-white to-blue-50/20 dark:from-[#0a0a0a] dark:to-blue-950/10 border-2 border-blue-100 dark:border-blue-900/30 rounded-2xl p-4 sm:p-5 group shadow-xl hover:shadow-2xl shadow-gray-300/50 dark:shadow-black/50 z-20 transition-all duration-300 hover:-translate-y-2"
     >
       <div>
         <a href={`${live || code}`}>
-          <div className={`h-[160px] sm:h-[180px] md:h-[200px] w-full relative rounded-xl overflow-hidden flex items-center justify-center ${
-            thumbnail ? 'bg-white dark:bg-neutral-800' : 'bg-gradient-to-br from-blue-500 to-blue-700'
+          <div className={`h-[160px] sm:h-[180px] md:h-[200px] w-full relative rounded-xl overflow-hidden flex items-center justify-center border-2 border-blue-100/50 dark:border-blue-900/30 ${
+            thumbnail ? 'bg-white dark:bg-neutral-800' : 'bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600'
           }`}>
             {thumbnail ? (
-              <img
+              <LazyImage
                 src={thumbnail}
                 className="w-full h-full object-contain transition-all duration-300 group-hover:scale-105 group-hover:rotate-1"
-                alt="Project thumbnail"
+                alt={`${title} thumbnail`}
               />
             ) : (
               <div className="text-white text-3xl sm:text-4xl font-bold opacity-50">
@@ -51,14 +52,14 @@ const ProjectCard = ({ live, thumbnail, code, title, description, tech }) => {
               </div>
             )}
 
-            <div className="absolute top-0 bottom-0 left-0 right-0 bg-neutral-900/50 transition-all duration-300 cursor-pointer group-hover:opacity-0" />
+            <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-t from-neutral-900/60 to-transparent transition-all duration-300 cursor-pointer group-hover:opacity-0" />
           </div>
         </a>
       </div>
 
       <div>
-        <div className="flex items-center justify-between my-3 sm:my-4">
-          <BsFillBookmarkStarFill className="text-xl sm:text-2xl text-blue-600 dark:text-blue-400" />
+        <div className="flex items-center justify-between my-4 sm:my-5">
+          <BsFillBookmarkStarFill className="text-2xl sm:text-3xl text-blue-600 dark:text-blue-400" />
 
           <div
             className={
@@ -89,16 +90,16 @@ const ProjectCard = ({ live, thumbnail, code, title, description, tech }) => {
           </div>
         </div>
 
-        <h1 className="text-lg sm:text-xl font-medium mb-2 sm:mb-1"> {title} </h1>
-        <p className="dark:text-neutral-200 text-neutral-600 text-xs sm:text-sm text-justify leading-relaxed">
+        <h1 className="text-lg sm:text-xl font-bold mb-2 sm:mb-1 text-slate-800 dark:text-slate-100"> {title} </h1>
+        <p className="dark:text-slate-300 text-slate-600 text-xs sm:text-sm text-justify leading-relaxed">
           {" "}
           {description}{" "}
         </p>
 
-        <div className="flex justify-center dark:text-neutral-300 text-neutral-700 mt-4 sm:mt-6 gap-x-2 sm:gap-x-3 gap-y-2 flex-wrap">
+        <div className="flex justify-center dark:text-neutral-300 text-neutral-700 mt-5 sm:mt-6 gap-x-2 sm:gap-x-3 gap-y-2 flex-wrap">
           {tech.map((e, i) => (
             <span
-              className="px-2 py-1 sm:p-2 rounded-md dark:bg-neutral-800 bg-neutral-200 text-xs"
+              className="px-3 py-1.5 sm:p-2 rounded-lg bg-blue-100/70 dark:bg-blue-900/30 text-xs font-medium border border-blue-200 dark:border-blue-800/30 text-blue-700 dark:text-blue-300"
               key={i}
             >
               {e}

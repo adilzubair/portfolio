@@ -2,7 +2,6 @@ import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { MdEmail } from "react-icons/md";
 import { motion } from "framer-motion";
 import AppFooterCopyright from "./FooterCopyright";
-import { ReactComponent as PeerlistIcon } from "../../assets/svg/Peerlist.svg";
 
 const socialLinks = [
 	{

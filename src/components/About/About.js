@@ -32,16 +32,16 @@ const About = () => {
         className="w-full px-4 sm:px-5 md:px-20 flex flex-col gap-6 md:gap-10"
       >
         <div className="flex-1">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-2 text-center sm:text-left">
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 sm:mb-3 text-center sm:text-left bg-gradient-to-r from-slate-800 via-blue-700 to-slate-800 dark:from-slate-100 dark:via-blue-300 dark:to-slate-100 bg-clip-text text-transparent">
             Hi, I am Muhamed Adil Edavana Valappil
           </h2>
-          <p className="mb-4 text-base sm:text-lg text-center sm:text-left leading-relaxed">
+          <p className="mb-6 text-base sm:text-lg text-center sm:text-left leading-relaxed text-slate-700 dark:text-slate-300">
             Software Engineer based in Dubai, UAE. Experienced in building
             scalable backend and frontend systems with Go, Python, JavaScript, and
             cloud-native tools. Passionate about AI, automation, and clean, modern
             web experiences.
           </p>
-          <h4 className="text-xl sm:text-2xl font-medium text-blue-600 dark:text-blue-400 mt-6 mb-3 sm:mb-2 text-center sm:text-left">
+          <h4 className="text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400 mt-8 mb-4 sm:mb-3 text-center sm:text-left uppercase tracking-wide">
             <Reveal width="100%">Work Experience</Reveal>
           </h4>
           <FeaturedCard
@@ -215,7 +215,7 @@ const About = () => {
               </ul>
             }
           />
-          <h4 className="text-xl sm:text-2xl font-medium text-blue-600 dark:text-blue-400 mt-6 mb-3 sm:mb-2 text-center sm:text-left">
+          <h4 className="text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400 mt-8 mb-4 sm:mb-3 text-center sm:text-left uppercase tracking-wide">
             <Reveal width="100%">Education</Reveal>
           </h4>
           <FeaturedCard

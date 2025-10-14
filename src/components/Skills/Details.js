@@ -11,7 +11,7 @@ const Details = () => {
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className="font-medium text-lg text-blue-600 dark:text-blue-400 mt-5 mb-1"
+        className="font-bold text-lg sm:text-xl text-blue-600 dark:text-blue-400 mt-5 mb-2 uppercase tracking-wide"
       >
         <Reveal width="100%">Programming Languages</Reveal>
       </motion.h2>
@@ -34,7 +34,7 @@ const Details = () => {
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className="font-medium text-lg text-blue-600 dark:text-blue-400 mt-5 mb-1"
+        className="font-bold text-lg sm:text-xl text-blue-600 dark:text-blue-400 mt-5 mb-2 uppercase tracking-wide"
       >
         <Reveal width="100%">Technologies</Reveal>
       </motion.h2>
@@ -60,7 +60,7 @@ const Details = () => {
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className="font-medium text-lg text-blue-600 dark:text-blue-400 mt-5 mb-1"
+        className="font-bold text-lg sm:text-xl text-blue-600 dark:text-blue-400 mt-5 mb-2 uppercase tracking-wide"
       >
         <Reveal width="100%">Softwares and Tools</Reveal>
       </motion.h2>

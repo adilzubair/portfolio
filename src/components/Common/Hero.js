@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import ActiveComponent from "./ActiveComponent";
 import BackgroundCircles from "./BackgroundCircles";
 import SliderText from "../Slider/SliderText";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const animation = {
   hide: { x: -32, opacity: 0 },
@@ -15,23 +15,39 @@ const animation = {
 };
 
 const Hero = () => {
-  window.addEventListener("scroll", function () {
-    const downArrow = this.document.querySelector(".down-arrow");
-
-    if (this.scrollY >= 1200) downArrow.classList.add("hide-down-arrow");
-    else downArrow.classList.remove("hide-down-arrow");
-  });
-
   const [sliderTextLoader, setSliderTextLoader] = useState(false);
 
-  setInterval(() => {
-    setSliderTextLoader(true);
-  }, 3500);
+  useEffect(() => {
+    // Handle scroll event for arrow visibility
+    const handleScroll = () => {
+      const downArrow = document.querySelector(".down-arrow");
+      if (downArrow) {
+        if (window.scrollY >= 1200) {
+          downArrow.classList.add("hide-down-arrow");
+        } else {
+          downArrow.classList.remove("hide-down-arrow");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Set slider text loader after delay
+    const timer = setTimeout(() => {
+      setSliderTextLoader(true);
+    }, 3500);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center items-center p-4 sm:p-5 text-center pt-28 sm:pt-32 z-30 overflow-y-hidden overflow-x-hidden"
+      className="relative min-h-screen flex flex-col justify-center items-center p-4 sm:p-5 text-center pt-28 sm:pt-32 z-30 overflow-y-hidden overflow-x-hidden bg-gradient-to-b from-blue-50/50 via-transparent to-transparent dark:from-blue-950/20 dark:via-transparent dark:to-transparent"
     >
       {!sliderTextLoader && <BackgroundCircles />}
       {sliderTextLoader && (
@@ -49,7 +65,7 @@ const Hero = () => {
         initial={animation.hide}
         animate={animation.show}
         transition={{ delay: 0.5 }}
-        className="text-sm sm:text-base pt-3 md:text-xl text-blue-600 dark:text-blue-400 font-bold z-0"
+        className="text-sm sm:text-base pt-3 md:text-xl text-blue-600 dark:text-blue-400 font-bold z-0 uppercase tracking-widest"
       >
         Software Engineer
       </motion.h2>
@@ -58,9 +74,9 @@ const Hero = () => {
         initial={animation.hide}
         animate={animation.show}
         transition={{ delay: 0.5 }}
-        className="py-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center font-bold leading-[1.1] z-0"
+        className="py-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-extrabold leading-[1.1] z-0"
       >
-        <span className="text-slate-700 dark:text-slate-200">
+        <span className="bg-gradient-to-r from-slate-700 via-blue-600 to-slate-700 dark:from-slate-200 dark:via-blue-400 dark:to-slate-200 bg-clip-text text-transparent">
           <TypeAnimation
             sequence={["Welcome👋", 2000, "Muhamed Adil"]}
             speed={30}
