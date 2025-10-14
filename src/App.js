@@ -8,6 +8,7 @@ import ErrorBoundary from "./components/Common/ErrorBoundary";
 import BackToTop from "./components/Common/BackToTop";
 import SkipToContent from "./components/Common/SkipToContent";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import Projects from "./components/Projects/Projects";
 import { Toaster } from "react-hot-toast";
@@ -56,6 +57,7 @@ function App() {
             <AppFooter />
             <BackToTop />
             <Analytics />
+            <SpeedInsights />
           </main>
         )}
       </div>

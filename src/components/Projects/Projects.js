@@ -19,7 +19,7 @@ const Projects = () => {
         {/* Right SVG */}
         <img
           src={RightSvg}
-          alt=""
+          alt="Decorative geometric pattern"
           className="absolute hidden right-0 bottom-2/4 w-2/12 max-w-xs md:block"
           loading="lazy"
           height={700}

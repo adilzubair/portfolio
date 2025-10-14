@@ -18,7 +18,7 @@ const Contact = () => {
         loading="lazy"
         height={700}
         width={320}
-        alt=""
+        alt="Decorative geometric pattern"
       />
       <motion.div
         initial={{ opacity: 0 }}

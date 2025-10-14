@@ -20,7 +20,7 @@ const SkillsPage = () => {
         loading="lazy"
         height={700}
         width={320}
-        alt=""
+        alt="Decorative geometric pattern"
       />
 
       <div className="px-3 sm:px-5 md:px-20 overflow-x-hidden max-w-[22rem] sm:max-w-[24rem] md:max-w-[50rem] lg:max-w-[75rem] xl:max-w-[80rem] 2xl:max-w-[100rem]">
