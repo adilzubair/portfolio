@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import ActiveComponent from "./ActiveComponent";
 import BackgroundCircles from "./BackgroundCircles";
 import SliderText from "../Slider/SliderText";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const animation = {
   hide: { x: -32, opacity: 0 },
@@ -16,17 +16,16 @@ const animation = {
 
 const Hero = () => {
   const [sliderTextLoader, setSliderTextLoader] = useState(false);
+  const arrowRef = useRef(null);
+  const [showArrow, setShowArrow] = useState(true);
 
   useEffect(() => {
     // Handle scroll event for arrow visibility
     const handleScroll = () => {
-      const downArrow = document.querySelector(".down-arrow");
-      if (downArrow) {
-        if (window.scrollY >= 1200) {
-          downArrow.classList.add("hide-down-arrow");
-        } else {
-          downArrow.classList.remove("hide-down-arrow");
-        }
+      if (window.scrollY >= 300) {
+        setShowArrow(false);
+      } else {
+        setShowArrow(true);
       }
     };
 
@@ -90,7 +89,10 @@ const Hero = () => {
         <ActiveComponent />
       </motion.div>
 
-      <div className="mt-16 sm:mt-20 mb-0 down-arrow z-0">
+      <div
+        ref={arrowRef}
+        className={`mt-16 sm:mt-20 mb-0 z-0 transition-opacity duration-500 ${showArrow ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      >
         <FaArrowDown className="text-blue-600 dark:text-blue-400 text-2xl sm:text-3xl animate-bounce " />
       </div>
     </section>

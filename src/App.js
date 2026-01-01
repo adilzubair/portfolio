@@ -15,8 +15,8 @@ import { Toaster } from "react-hot-toast";
 import About from "./components/About/About";
 import Contact from "./components/Contact/ContactsPage";
 import Hero from "./components/Common/Hero";
-// import Certifications from "./components/Certifications/Certifications";
-// import Testimonials from "./components/Testimonials/Testimonials";
+import Certifications from "./components/Certifications/Certifications";
+import Testimonials from "./components/Testimonials/Testimonials";
 
 
 function App() {

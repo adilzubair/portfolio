@@ -45,7 +45,7 @@ export const Reveal = ({ children, width }) => {
           bottom: 4,
           left: 0,
           right: 0,
-          background: "#f59e0b",
+          background: "#3b82f6",
           zIndex: 20,
           borderRadius: 10,
         }}
