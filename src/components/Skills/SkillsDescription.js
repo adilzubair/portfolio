@@ -26,7 +26,7 @@ const SkillsDescription = () => {
       >
         In the expansive field of software development, I've acquired diverse
         experience in &nbsp;
-        <span className="font-semibold">Full-Stack Development, Backend Systems, and Cloud Technologies</span>
+        <span className="font-semibold">Applied AI, Backend Systems, and Full-Stack Development</span>
       </motion.p>
 
       <motion.h2
@@ -86,8 +86,7 @@ const SkillsDescription = () => {
             viewport={{ once: true }}
             className="text-xs sm:text-sm font-light leading-relaxed"
           >
-            Experienced in integrating AI tools and building intelligent systems using OpenAI API, GPT models,
-            and developing AI-powered applications for automation and data processing.
+            Specialized in building RAG systems and Agentic Workflows using LangChain and LangGraph. Experienced in LLM fine-tuning (LoRA/QLoRA) and performance optimization via quantization (OpenVINO).
           </motion.p>
         </div>
       </div>
