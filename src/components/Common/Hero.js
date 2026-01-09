@@ -34,7 +34,7 @@ const Hero = () => {
     // Set slider text loader after delay
     const timer = setTimeout(() => {
       setSliderTextLoader(true);
-    }, 3500);
+    }, 1500);
 
     // Cleanup
     return () => {
@@ -66,7 +66,7 @@ const Hero = () => {
         transition={{ delay: 0.5 }}
         className="text-sm sm:text-base pt-3 md:text-xl text-blue-600 dark:text-blue-400 font-bold z-0 uppercase tracking-widest"
       >
-        Software Engineer
+        AI & Software Engineer
       </motion.h2>
 
       <motion.div
@@ -77,7 +77,7 @@ const Hero = () => {
       >
         <span className="bg-gradient-to-r from-slate-700 via-blue-600 to-slate-700 dark:from-slate-200 dark:via-blue-400 dark:to-slate-200 bg-clip-text text-transparent">
           <TypeAnimation
-            sequence={["Welcome👋", 2000, "Muhamed Adil"]}
+            sequence={["Applied AI Engineer", 2000, "Backend Engineer", 2000, "Software Engineer", 2000]}
             speed={30}
             wrapper="span"
             repeat={Infinity}

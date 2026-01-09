@@ -1,6 +1,26 @@
 
 export const projects = [
   {
+    title: "Local Agentic RAG (Ollama & Private Data)",
+    description:
+      "Built a secure, local RAG system using Ollama to run models like Mistral and Phi-3 on private enterprise data, ensuring offline capability. Implemented strict agentic logic using LangGraph to ensure responses were 100% grounded in retrieved context with no hallucinations.",
+    tech: ["LangChain", "Ollama", "ChromaDB", "LangGraph", "Python"],
+    code: "https://github.com/adilzubair/",
+    live: "",
+    thumbnail: "/images/projects/agentic-rag-chatbot.png",
+    featured: true,
+  },
+  {
+    title: "PRISM - Full Stack Multimodal Chatbot",
+    description:
+      "Developed a multi-conversation platform featuring streaming responses, multimodal vision support, and conversation memory. Implemented a comprehensive usage tracking system to monitor token consumption and calculate real-time API costs per user.",
+    tech: ["FastAPI", "React", "TypeScript", "OpenAI", "Gemini"],
+    code: "https://github.com/adilzubair/",
+    live: "",
+    thumbnail: "/images/projects/prism-chatbot.png",
+    featured: true,
+  },
+  {
     title: "QuickEval - AI Answer Sheet Evaluator",
     description:
       "QuickEval is an intelligent web application that automates the evaluation of student answer sheets using AI, helping educators save time and maintain consistency in grading. Built with React.js, Node.js, and MongoDB, it leverages the OpenAI API to assess answers, provide detailed scoring with confidence levels and remarks, and generate comprehensive evaluation reports.",
@@ -18,17 +38,26 @@ export const projects = [
     code: "https://github.com/Project-SCE/Crashchain",
     live: "",
     thumbnail: "/images/projects/Crashchain.png",
-    featured: true,
+    featured: false,
   },
   {
-    title: "FoodBot - LLM-based Chatbot",
+    title: "LLM Fine-Tuning & Quantization",
     description:
-      "Created a GPT-powered WhatsApp bot for restaurant ordering with integrated RESTful backend services. Built with extensibility and error handling logic.",
-    tech: ["GPT", "WhatsApp API", "REST APIs", "Python"],
-    code: "https://github.com/adilzubair/Yukthi_hackathon",
+      "Fine-tuned Phi-3-mini and GPT-2 Medium models using QLoRA, achieving 99% reduction in trainable parameters. Applied 4-bit quantization to enable high-performance model training and deployment on consumer-grade GPUs.",
+    tech: ["Hugging Face PEFT", "QLoRA", "PyTorch", "bitsandbytes"],
+    code: "https://github.com/adilzubair/",
     live: "",
-    // thumbnail: "/images/projects/footbot",
-    thumbnail: null,
+    thumbnail: "/images/projects/fine-tuning.png",
+    featured: false,
+  },
+  {
+    title: "Transformer Architecture from Scratch",
+    description:
+      "Implemented a complete GPT-style transformer with multi-head self-attention, positional embeddings, and residual connections. Developed character-level tokenization and autoregressive decoding.",
+    tech: ["PyTorch", "TensorFlow", "Deep Learning"],
+    code: "https://github.com/adilzubair/",
+    live: "",
+    thumbnail: "/images/projects/transformer-architecture.png",
     featured: false,
   },
   {
@@ -39,28 +68,42 @@ export const projects = [
     code: "https://github.com/adilzubair/propease",
     live: "",
     thumbnail: "/images/projects/propease.png",
-    featured: true,
-  },
-  {
-    title: "World Economic Data Platform for IBM",
-    description:
-      "Led analytics project using IBM Cognos to centralize global datasets and generate dashboards with rule-based alert systems. Used REST endpoints for data sync.",
-    tech: ["IBM Cognos", "Dashboards", "REST APIs"],
-    code: "https://github.com/adilzubair/IBM-Hack-Challenge",
-    live: "",
-    thumbnail: null,
     featured: false,
   },
   {
-    title: "LedgerTrue - Anomaly Detection Dashboard",
+    title: "FoodBot - LLM-based Chatbot",
     description:
-      "Engineered modular backend using FastAPI and React, with support for Excel-based input and visual insights. Integrated basic load balancing strategy for concurrency.",
-    tech: ["FastAPI", "React", "Excel", "Python"],
-    code: "https://github.com/adilzubair/Ledger-True",
+      "Created a GPT-powered WhatsApp bot for restaurant ordering with integrated RESTful backend services. Built with extensibility and error handling logic.",
+    tech: ["GPT", "WhatsApp API", "REST APIs", "Python"],
+    code: "https://github.com/adilzubair/Yukthi_hackathon",
     live: "",
-    thumbnail: null,
+    thumbnail: "/images/projects/footbot.png",
     featured: false,
   },
+  /*
+    {
+      title: "World Economic Data Platform for IBM",
+      description:
+        "Led analytics project using IBM Cognos to centralize global datasets and generate dashboards with rule-based alert systems. Used REST endpoints for data sync.",
+      tech: ["IBM Cognos", "Dashboards", "REST APIs"],
+      code: "https://github.com/adilzubair/IBM-Hack-Challenge",
+      live: "",
+      thumbnail: null,
+      featured: false,
+    },
+  */
+  /*
+    {
+      title: "LedgerTrue - Anomaly Detection Dashboard",
+      description:
+        "Engineered modular backend using FastAPI and React, with support for Excel-based input and visual insights. Integrated basic load balancing strategy for concurrency.",
+      tech: ["FastAPI", "React", "Excel", "Python"],
+      code: "https://github.com/adilzubair/Ledger-True",
+      live: "",
+      thumbnail: null,
+      featured: false,
+    },
+  */
 ];
 
 
