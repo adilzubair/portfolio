@@ -5,7 +5,7 @@ export const projects = [
     description:
       "Built a secure, local RAG system using Ollama to run models like Mistral and Phi-3 on private enterprise data, ensuring offline capability. Implemented strict agentic logic using LangGraph to ensure responses were 100% grounded in retrieved context with no hallucinations.",
     tech: ["LangChain", "Ollama", "ChromaDB", "LangGraph", "Python"],
-    code: "https://github.com/adilzubair/",
+    code: "https://github.com/adilzubair/local-rag-agents",
     live: "",
     thumbnail: "/images/projects/agentic-rag-chatbot.png",
     featured: true,
@@ -15,7 +15,7 @@ export const projects = [
     description:
       "Developed a multi-conversation platform featuring streaming responses, multimodal vision support, and conversation memory. Implemented a comprehensive usage tracking system to monitor token consumption and calculate real-time API costs per user.",
     tech: ["FastAPI", "React", "TypeScript", "OpenAI", "Gemini"],
-    code: "https://github.com/adilzubair/",
+    code: "https://github.com/adilzubair/switch-chat",
     live: "",
     thumbnail: "/images/projects/prism-chatbot.png",
     featured: true,
@@ -45,7 +45,7 @@ export const projects = [
     description:
       "Fine-tuned Phi-3-mini and GPT-2 Medium models using QLoRA, achieving 99% reduction in trainable parameters. Applied 4-bit quantization to enable high-performance model training and deployment on consumer-grade GPUs.",
     tech: ["Hugging Face PEFT", "QLoRA", "PyTorch", "bitsandbytes"],
-    code: "https://github.com/adilzubair/",
+    code: "https://github.com/adilzubair/phi3-medical-qlora",
     live: "",
     thumbnail: "/images/projects/fine-tuning.png",
     featured: false,
@@ -55,7 +55,7 @@ export const projects = [
     description:
       "Implemented a complete GPT-style transformer with multi-head self-attention, positional embeddings, and residual connections. Developed character-level tokenization and autoregressive decoding.",
     tech: ["PyTorch", "TensorFlow", "Deep Learning"],
-    code: "https://github.com/adilzubair/",
+    code: "https://github.com/adilzubair/transformer-lab",
     live: "",
     thumbnail: "/images/projects/transformer-architecture.png",
     featured: false,
