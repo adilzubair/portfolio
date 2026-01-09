@@ -7,7 +7,7 @@ export const projects = [
     tech: ["LangChain", "Ollama", "ChromaDB", "LangGraph", "Python"],
     code: "https://github.com/adilzubair/",
     live: "",
-    thumbnail: null,
+    thumbnail: "/images/projects/agentic-rag-chatbot.png",
     featured: true,
   },
   {
@@ -17,7 +17,7 @@ export const projects = [
     tech: ["FastAPI", "React", "TypeScript", "OpenAI", "Gemini"],
     code: "https://github.com/adilzubair/",
     live: "",
-    thumbnail: null,
+    thumbnail: "/images/projects/prism-chatbot.png",
     featured: true,
   },
   {
@@ -47,7 +47,7 @@ export const projects = [
     tech: ["Hugging Face PEFT", "QLoRA", "PyTorch", "bitsandbytes"],
     code: "https://github.com/adilzubair/",
     live: "",
-    thumbnail: null,
+    thumbnail: "/images/projects/fine-tuning.png",
     featured: false,
   },
   {
@@ -57,7 +57,7 @@ export const projects = [
     tech: ["PyTorch", "TensorFlow", "Deep Learning"],
     code: "https://github.com/adilzubair/",
     live: "",
-    thumbnail: null,
+    thumbnail: "/images/projects/transformer-architecture.png",
     featured: false,
   },
   {
@@ -77,29 +77,33 @@ export const projects = [
     tech: ["GPT", "WhatsApp API", "REST APIs", "Python"],
     code: "https://github.com/adilzubair/Yukthi_hackathon",
     live: "",
-    thumbnail: null,
+    thumbnail: "/images/projects/footbot.png",
     featured: false,
   },
-  {
-    title: "World Economic Data Platform for IBM",
-    description:
-      "Led analytics project using IBM Cognos to centralize global datasets and generate dashboards with rule-based alert systems. Used REST endpoints for data sync.",
-    tech: ["IBM Cognos", "Dashboards", "REST APIs"],
-    code: "https://github.com/adilzubair/IBM-Hack-Challenge",
-    live: "",
-    thumbnail: null,
-    featured: false,
-  },
-  {
-    title: "LedgerTrue - Anomaly Detection Dashboard",
-    description:
-      "Engineered modular backend using FastAPI and React, with support for Excel-based input and visual insights. Integrated basic load balancing strategy for concurrency.",
-    tech: ["FastAPI", "React", "Excel", "Python"],
-    code: "https://github.com/adilzubair/Ledger-True",
-    live: "",
-    thumbnail: null,
-    featured: false,
-  },
+  /*
+    {
+      title: "World Economic Data Platform for IBM",
+      description:
+        "Led analytics project using IBM Cognos to centralize global datasets and generate dashboards with rule-based alert systems. Used REST endpoints for data sync.",
+      tech: ["IBM Cognos", "Dashboards", "REST APIs"],
+      code: "https://github.com/adilzubair/IBM-Hack-Challenge",
+      live: "",
+      thumbnail: null,
+      featured: false,
+    },
+  */
+  /*
+    {
+      title: "LedgerTrue - Anomaly Detection Dashboard",
+      description:
+        "Engineered modular backend using FastAPI and React, with support for Excel-based input and visual insights. Integrated basic load balancing strategy for concurrency.",
+      tech: ["FastAPI", "React", "Excel", "Python"],
+      code: "https://github.com/adilzubair/Ledger-True",
+      live: "",
+      thumbnail: null,
+      featured: false,
+    },
+  */
 ];
 
 
