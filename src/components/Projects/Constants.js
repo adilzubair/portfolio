@@ -10,6 +10,17 @@ const imageDimensions = {
   "/images/projects/footbot.png": { width: 495, height: 259 },
 };
 
+const projectIds = {
+  "Local Agentic RAG (Ollama & Private Data)": "project-local-rag",
+  "PRISM - Full Stack Multimodal Chatbot": "project-prism-chatbot",
+  "QuickEval - AI Answer Sheet Evaluator": "project-quickeval",
+  "Crashchain - Digital Forensics Platform": "project-crashchain",
+  "LLM Fine-Tuning & Quantization": "project-fine-tuning",
+  "Transformer Architecture from Scratch": "project-transformer",
+  "PropEase - Real Estate SaaS Landing Page": "project-propease",
+  "FoodBot - LLM-based Chatbot": "project-foodbot",
+};
+
 export const projects = [
   {
     title: "Local Agentic RAG (Ollama & Private Data)",
@@ -117,5 +128,5 @@ export const projects = [
   */
 ];
 
-export { imageDimensions };
+export { imageDimensions, projectIds };
 

@@ -5,7 +5,7 @@ import Featured from "./Featured";
 import Section from "../Common/Section";
 import ProjectCard from "./ProjectCard";
 import RightSvg from "../../assets/svg/right-pattern.svg";
-import { projects } from "./Constants";
+import { projects, projectIds } from "./Constants";
 
 const Projects = () => {
   return (
@@ -37,6 +37,7 @@ const Projects = () => {
                 description={e.description}
                 tech={e.tech}
                 secondary={i % 2 === 0 ? false : true}
+                projectId={projectIds[e.title]}
               />
             </motion.div>
           ))}

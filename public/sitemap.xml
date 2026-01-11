@@ -1,47 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  
+
   <!-- Homepage -->
   <url>
     <loc>https://muhamedadil.com/</loc>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2026-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
+
   <!-- About Section -->
   <url>
     <loc>https://muhamedadil.com/#about</loc>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2026-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Skills Section -->
   <url>
     <loc>https://muhamedadil.com/#skills</loc>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2026-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Projects Section -->
   <url>
     <loc>https://muhamedadil.com/#projects</loc>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2026-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
   <!-- Contact Section -->
   <url>
     <loc>https://muhamedadil.com/#contact</loc>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2026-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Individual Projects (Anchors) -->
+  <url>
+    <loc>https://muhamedadil.com/#project-local-rag</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://muhamedadil.com/images/projects/agentic-rag-chatbot.png</image:loc>
+      <image:title>Local Agentic RAG System</image:title>
+      <image:caption>Secure, local RAG system using Ollama for private enterprise data</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://muhamedadil.com/#project-prism-chatbot</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://muhamedadil.com/images/projects/prism-chatbot.png</image:loc>
+      <image:title>PRISM - Full Stack Multimodal Chatbot</image:title>
+      <image:caption>Multi-conversation platform with streaming responses and multimodal vision support</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://muhamedadil.com/#project-quickeval</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://muhamedadil.com/images/projects/QuickEval.png</image:loc>
+      <image:title>QuickEval - AI Answer Sheet Evaluator</image:title>
+      <image:caption>Automated evaluation of student answer sheets using AI</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://muhamedadil.com/#project-crashchain</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://muhamedadil.com/images/projects/Crashchain.png</image:loc>
+      <image:title>Crashchain - Digital Forensics Platform</image:title>
+      <image:caption>Blockchain-integrated platform for vehicle crash data verification</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://muhamedadil.com/#project-fine-tuning</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://muhamedadil.com/images/projects/fine-tuning.png</image:loc>
+      <image:title>LLM Fine-Tuning & Quantization</image:title>
+      <image:caption>Fine-tuned Phi-3-mini and GPT-2 models using QLoRA and 4-bit quantization</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://muhamedadil.com/#project-transformer</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://muhamedadil.com/images/projects/transformer-architecture.png</image:loc>
+      <image:title>Transformer Architecture from Scratch</image:title>
+      <image:caption>GPT-style transformer implementation with multi-head self-attention</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://muhamedadil.com/#project-propease</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://muhamedadil.com/images/projects/propease.png</image:loc>
+      <image:title>PropEase - Real Estate SaaS Landing Page</image:title>
+      <image:caption>Modern, responsive landing page for real estate SaaS platforms</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://muhamedadil.com/#project-foodbot</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://muhamedadil.com/images/projects/footbot.png</image:loc>
+      <image:title>FoodBot - LLM-based Chatbot</image:title>
+      <image:caption>GPT-powered WhatsApp bot for restaurant ordering</image:caption>
+    </image:image>
   </url>
 
 </urlset>

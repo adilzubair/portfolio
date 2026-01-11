@@ -12,6 +12,7 @@ const Featured = ({
   title,
   description,
   tech,
+  projectId,
 }) => {
   const __renderImage = () => {
     return (
@@ -103,7 +104,7 @@ const Featured = ({
   };
 
   return (
-    <div className="relative grid grid-cols-12 items-center gap-3 group ">
+    <div id={projectId} className="relative grid grid-cols-12 items-center gap-3 group ">
       {secondary ? (
         <>
           {__renderContent()}

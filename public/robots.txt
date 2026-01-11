@@ -1,6 +1,20 @@
 # https://www.robotstxt.org/robotstxt.html
+# Global rules
 User-agent: *
-Disallow:
+Allow: /
 
-# Sitemap
+# Allow important assets
+Allow: /images/
+Allow: /favicon/
+
+# Disallow development/build files
+Disallow: /build/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /scripts/
+
+# Crawl delay for respectful crawling (1 second between requests)
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://muhamedadil.com/sitemap.xml
