@@ -16,7 +16,7 @@
     />
     <meta
       name="keywords"
-      content="Muhamed Adil, Software Engineer, Go, Python, JavaScript, FastAPI, React, Node.js, AWS, Dubai, Portfolio"
+      content="Muhamed Adil, Software Engineer, Go, Python, JavaScript, FastAPI, React, Node.js, AWS, Dubai, Portfolio, AI, RAG, LLM, Machine Learning"
     />
     <meta name="author" content="Muhamed Adil Edavana Valappil" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,13 +24,13 @@
     <meta http-equiv="Content-Language" content="en" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="canonical" href="https://muhamedadil.com" />
-    
+
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://vercel.live" />
     <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
-    
+
     <!-- Additional SEO -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
@@ -59,11 +59,11 @@
     <meta property="og:site_name" content="Muhamed Adil Portfolio" />
     <meta
       property="og:title"
-      content="Muhamed Adil Portfolio"
+      content="Muhamed Adil - Software Engineer & AI Engineer | Dubai, UAE"
     />
     <meta
       property="og:description"
-      content="Portfolio of Muhamed Adil Edavana Valappil, Software Engineer based in Dubai, UAE. Projects, skills, and achievements."
+      content="Portfolio of Muhamed Adil Edavana Valappil, Software Engineer based in Dubai, UAE. Expert in Go, Python, JavaScript, AI/ML, RAG, and LLM systems. Explore projects, skills, and achievements."
     />
 
     <!-- Twitter -->
@@ -80,14 +80,14 @@
     <meta name="twitter:creator" content="@muhamedadil" />
     <meta
       name="twitter:title"
-      content="Muhamed Adil Portfolio"
+      content="Muhamed Adil - Software Engineer & AI Engineer | Dubai, UAE"
     />
     <meta
       name="twitter:description"
-      content="Portfolio of Muhamed Adil Edavana Valappil, Software Engineer based in Dubai, UAE."
+      content="Portfolio of Muhamed Adil Edavana Valappil, Software Engineer based in Dubai, UAE. Expert in Go, Python, JavaScript, AI/ML, RAG, and LLM systems."
     />
 
-    <title>Muhamed Adil | Software Engineer - Go, Python, JavaScript | Dubai, UAE</title>
+    <title>Muhamed Adil | Software Engineer & AI Engineer | Go, Python, JavaScript | Dubai, UAE</title>
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -97,18 +97,22 @@
       "name": "Muhamed Adil Edavana Valappil",
       "url": "https://muhamedadil.com",
       "image": "https://muhamedadil.com/og-image.png",
-      "jobTitle": "Software Engineer",
+      "jobTitle": "Applied AI Engineer",
+      "description": "Software Engineer specializing in AI/ML, RAG, and LLM systems. Based in Dubai, UAE.",
       "worksFor": {
         "@type": "Organization",
-        "name": "Software Development"
+        "name": "Greentruth Technology"
       },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Dubai",
         "addressCountry": "UAE"
       },
-      "alumniOf": "Software Engineering",
-      "knowsAbout": ["Go", "Python", "JavaScript", "FastAPI", "React", "Node.js", "AWS", "Cloud Computing", "AI"],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Saintgits College of Engineering"
+      },
+      "knowsAbout": ["Go", "Python", "JavaScript", "FastAPI", "React", "Node.js", "AWS", "Cloud Computing", "AI", "RAG", "LLM", "LangChain", "Ollama", "Docker", "PyTorch", "Transformers"],
       "sameAs": [
         "https://github.com/muhamedadil",
         "https://linkedin.com/in/muhamedadil",
@@ -123,12 +127,182 @@
       "@type": "WebSite",
       "name": "Muhamed Adil Portfolio",
       "url": "https://muhamedadil.com",
-      "description": "Portfolio of Muhamed Adil Edavana Valappil, Software Engineer based in Dubai, UAE. Experienced in Go, Python, JavaScript, cloud-native tools, and AI.",
+      "description": "Portfolio of Muhamed Adil Edavana Valappil, Software Engineer based in Dubai, UAE. Expert in Go, Python, JavaScript, AI/ML, RAG, and LLM systems.",
       "author": {
         "@type": "Person",
         "name": "Muhamed Adil Edavana Valappil"
       },
-      "inLanguage": "en-US"
+      "inLanguage": "en-US",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://muhamedadil.com/#projects",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "name": "Site Navigation",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://muhamedadil.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://muhamedadil.com/#about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Skills",
+          "item": "https://muhamedadil.com/#skills"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Projects",
+          "item": "https://muhamedadil.com/#projects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Contact",
+          "item": "https://muhamedadil.com/#contact"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Project ItemList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Muhamed Adil's Projects",
+      "description": "Software engineering and AI projects including RAG systems, chatbots, fine-tuned models, and more",
+      "itemListElement": [
+        {
+          "@type": "CreativeWork",
+          "position": 1,
+          "name": "Local Agentic RAG System",
+          "description": "Built a secure, local RAG system using Ollama to run models like Mistral and Phi-3 on private enterprise data, ensuring offline capability. Implemented strict agentic logic using LangGraph to ensure responses were 100% grounded in retrieved context with no hallucinations.",
+          "image": "https://muhamedadil.com/images/projects/agentic-rag-chatbot.png",
+          "url": "https://github.com/adilzubair/local-rag-agents",
+          "applicationCategory": "AI/ML",
+          "keywords": ["LangChain", "Ollama", "ChromaDB", "LangGraph", "Python", "RAG", "Agentic Workflows"],
+          "author": {
+            "@type": "Person",
+            "name": "Muhamed Adil Edavana Valappil"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 2,
+          "name": "PRISM - Full Stack Multimodal Chatbot",
+          "description": "Developed a multi-conversation platform featuring streaming responses, multimodal vision support, and conversation memory. Implemented a comprehensive usage tracking system to monitor token consumption and calculate real-time API costs per user.",
+          "image": "https://muhamedadil.com/images/projects/prism-chatbot.png",
+          "url": "https://github.com/adilzubair/switch-chat",
+          "applicationCategory": "Chatbot",
+          "keywords": ["FastAPI", "React", "TypeScript", "OpenAI", "Gemini", "Multimodal", "Streaming"],
+          "author": {
+            "@type": "Person",
+            "name": "Muhamed Adil Edavana Valappil"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 3,
+          "name": "QuickEval - AI Answer Sheet Evaluator",
+          "description": "QuickEval is an intelligent web application that automates the evaluation of student answer sheets using AI, helping educators save time and maintain consistency in grading. Built with React.js, Node.js, and MongoDB, it leverages the OpenAI API to assess answers, provide detailed scoring with confidence levels and remarks, and generate comprehensive evaluation reports.",
+          "image": "https://muhamedadil.com/images/projects/QuickEval.png",
+          "url": "https://github.com/adilzubair/QuickEval",
+          "applicationCategory": "Education",
+          "keywords": ["React.js", "Node.js", "MongoDB", "OpenAI API", "AI", "Evaluation"],
+          "author": {
+            "@type": "Person",
+            "name": "Muhamed Adil Edavana Valappil"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 4,
+          "name": "Crashchain - Digital Forensics Platform",
+          "description": "A secure, blockchain-integrated platform for capturing and verifying vehicle crash data. This tool ensures tamper-proof storage and validation of OBD data and crash footage using Ethereum smart contracts. It features real-time data collection, anomaly detection, and a user-friendly dashboard for investigators.",
+          "image": "https://muhamedadil.com/images/projects/Crashchain.png",
+          "url": "https://github.com/Project-SCE/Crashchain",
+          "applicationCategory": "Blockchain",
+          "keywords": ["Node.js", "Ethereum", "Web3.js", "Truffle", "Smart Contracts", "Digital Forensics"],
+          "author": {
+            "@type": "Person",
+            "name": "Muhamed Adil Edavana Valappil"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 5,
+          "name": "LLM Fine-Tuning & Quantization",
+          "description": "Fine-tuned Phi-3-mini and GPT-2 Medium models using QLoRA, achieving 99% reduction in trainable parameters. Applied 4-bit quantization to enable high-performance model training and deployment on consumer-grade GPUs.",
+          "image": "https://muhamedadil.com/images/projects/fine-tuning.png",
+          "url": "https://github.com/adilzubair/phi3-medical-qlora",
+          "applicationCategory": "Machine Learning",
+          "keywords": ["Hugging Face PEFT", "QLoRA", "PyTorch", "bitsandbytes", "Fine-tuning", "Quantization", "4-bit"],
+          "author": {
+            "@type": "Person",
+            "name": "Muhamed Adil Edavana Valappil"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 6,
+          "name": "Transformer Architecture from Scratch",
+          "description": "Implemented a complete GPT-style transformer with multi-head self-attention, positional embeddings, and residual connections. Developed character-level tokenization and autoregressive decoding.",
+          "image": "https://muhamedadil.com/images/projects/transformer-architecture.png",
+          "url": "https://github.com/adilzubair/transformer-lab",
+          "applicationCategory": "Deep Learning",
+          "keywords": ["PyTorch", "TensorFlow", "Deep Learning", "Transformer", "Attention", "GPT"],
+          "author": {
+            "@type": "Person",
+            "name": "Muhamed Adil Edavana Valappil"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 7,
+          "name": "PropEase - Real Estate SaaS Landing Page",
+          "description": "PropEase is a modern, responsive landing page designed for real estate SaaS platforms. Built with React, Vite, and Tailwind CSS, it offers a clean UI to showcase property listings, agent profiles, and real estate services. The project emphasizes performance and scalability, making it ideal for startups and real estate tech solutions.",
+          "image": "https://muhamedadil.com/images/projects/propease.png",
+          "url": "https://github.com/adilzubair/propease",
+          "applicationCategory": "Web Development",
+          "keywords": ["React", "Vite", "Tailwind CSS", "SaaS", "Landing Page", "Real Estate"],
+          "author": {
+            "@type": "Person",
+            "name": "Muhamed Adil Edavana Valappil"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 8,
+          "name": "FoodBot - LLM-based Chatbot",
+          "description": "Created a GPT-powered WhatsApp bot for restaurant ordering with integrated RESTful backend services. Built with extensibility and error handling logic.",
+          "image": "https://muhamedadil.com/images/projects/footbot.png",
+          "url": "https://github.com/adilzubair/Yukthi_hackathon",
+          "applicationCategory": "Chatbot",
+          "keywords": ["GPT", "WhatsApp API", "REST APIs", "Python", "Restaurant", "Ordering"],
+          "author": {
+            "@type": "Person",
+            "name": "Muhamed Adil Edavana Valappil"
+          }
+        }
+      ]
     }
     </script>
 
@@ -139,7 +313,6 @@
       "name": "Muhamed Adil - Software Engineering Services",
       "image": "https://muhamedadil.com/og-image.png",
       "url": "https://muhamedadil.com",
-      "telephone": "",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
