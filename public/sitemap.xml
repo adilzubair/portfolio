@@ -101,7 +101,7 @@
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://muhamedadil.com/images/projects/fine-tuning.png</image:loc>
-      <image:title>LLM Fine-Tuning & Quantization</image:title>
+      <image:title>LLM Fine-Tuning &amp; Quantization</image:title>
       <image:caption>Fine-tuned Phi-3-mini and GPT-2 models using QLoRA and 4-bit quantization</image:caption>
     </image:image>
   </url>
