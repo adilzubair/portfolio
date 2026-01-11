@@ -2,6 +2,7 @@ import React from "react";
 import { BiLinkAlt } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 import LazyImage from "../Common/LazyImage";
+import { imageDimensions } from "./Constants";
 
 const Featured = ({
   secondary,
@@ -24,6 +25,8 @@ const Featured = ({
                 src={thumbnail}
                 className="w-full h-full transition-all object-contain duration-300 group-hover:scale-105 group-hover:rotate-1"
                 alt={`${title} thumbnail`}
+                width={imageDimensions[thumbnail]?.width}
+                height={imageDimensions[thumbnail]?.height}
               />
             ) : (
               <div className="text-white text-4xl sm:text-5xl md:text-6xl font-bold opacity-50">

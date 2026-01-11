@@ -1,4 +1,15 @@
 
+const imageDimensions = {
+  "/images/projects/agentic-rag-chatbot.png": { width: 1295, height: 677 },
+  "/images/projects/prism-chatbot.png": { width: 2940, height: 1607 },
+  "/images/projects/QuickEval.png": { width: 1897, height: 925 },
+  "/images/projects/Crashchain.png": { width: 1886, height: 902 },
+  "/images/projects/fine-tuning.png": { width: 1364, height: 568 },
+  "/images/projects/transformer-architecture.png": { width: 2026, height: 1106 },
+  "/images/projects/propease.png": { width: 1902, height: 970 },
+  "/images/projects/footbot.png": { width: 495, height: 259 },
+};
+
 export const projects = [
   {
     title: "Local Agentic RAG (Ollama & Private Data)",
@@ -106,4 +117,5 @@ export const projects = [
   */
 ];
 
+export { imageDimensions };
 

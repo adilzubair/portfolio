@@ -1,12 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import LazyImage from "../Common/LazyImage";
-//
+import { imageDimensions } from "./Constants";
 import { BsFillBookmarkStarFill } from "react-icons/bs";
 import { motionStep } from "./Motion";
 import { BiLinkAlt } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
-//
 
 const ProjectCard = ({ live, thumbnail, code, title, description, tech }) => {
   return (
@@ -45,6 +44,8 @@ const ProjectCard = ({ live, thumbnail, code, title, description, tech }) => {
                 src={thumbnail}
                 className="w-full h-full object-contain transition-all duration-300 group-hover:scale-105 group-hover:rotate-1"
                 alt={`${title} thumbnail`}
+                width={imageDimensions[thumbnail]?.width}
+                height={imageDimensions[thumbnail]?.height}
               />
             ) : (
               <div className="text-white text-3xl sm:text-4xl font-bold opacity-50">
