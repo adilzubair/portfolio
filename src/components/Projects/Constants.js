@@ -1,5 +1,6 @@
 
 const imageDimensions = {
+  "/images/projects/cortex.png": { width: 2400, height: 1402 },
   "/images/projects/agentic-rag-chatbot.png": { width: 1295, height: 677 },
   "/images/projects/prism-chatbot.png": { width: 2940, height: 1607 },
   "/images/projects/QuickEval.png": { width: 1897, height: 925 },
@@ -11,6 +12,7 @@ const imageDimensions = {
 };
 
 const projectIds = {
+  "Cortex - AI-Powered Codebase Assistant": "project-cortex",
   "Local Agentic RAG (Ollama & Private Data)": "project-local-rag",
   "PRISM - Full Stack Multimodal Chatbot": "project-prism-chatbot",
   "QuickEval - AI Answer Sheet Evaluator": "project-quickeval",
@@ -22,6 +24,16 @@ const projectIds = {
 };
 
 export const projects = [
+  {
+    title: "Cortex - AI-Powered Codebase Assistant",
+    description:
+      "Built a sophisticated RAG-based AI coding assistant with multi-agent orchestration using LangGraph. Features incremental indexing with SHA-256 hashing, LSP integration for Python static analysis, semantic search with reranking, and real-time file watching. Supports both local models (Ollama) and OpenAI with multi-project management capabilities.",
+    tech: ["LangChain", "LangGraph", "Ollama", "ChromaDB", "Jedi LSP", "Python"],
+    code: "https://github.com/adilzubair/cortex",
+    live: "",
+    thumbnail: "/images/projects/cortex.png",
+    featured: true,
+  },
   {
     title: "Local Agentic RAG (Ollama & Private Data)",
     description:
