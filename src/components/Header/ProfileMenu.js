@@ -61,6 +61,18 @@ export default function ProfileMenu() {
           </li>
           <li className="border-b dark:border-blue-900/20 border-blue-100">
             <Link
+              to="blog"
+              smooth={true}
+              offset={-40}
+              duration={800}
+              onClick={() => setOpen(!open)}
+              className="cursor-pointer flex w-full items-center px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-300 transition-all"
+            >
+              Blog
+            </Link>
+          </li>
+          <li className="border-b dark:border-blue-900/20 border-blue-100">
+            <Link
               to="contact"
               smooth={true}
               offset={-40}

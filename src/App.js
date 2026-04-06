@@ -13,6 +13,8 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import Projects from "./components/Projects/Projects";
 import { Toaster } from "react-hot-toast";
 import About from "./components/About/About";
+import Blog from "./components/Blog/Blog";
+import BlogPost from "./components/Blog/BlogPost";
 import Contact from "./components/Contact/ContactsPage";
 import Hero from "./components/Common/Hero";
 // import Certifications from "./components/Certifications/Certifications";
@@ -22,6 +24,21 @@ import Hero from "./components/Common/Hero";
 function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [loading, setLoading] = useState(true);
+  const [route, setRoute] = useState("");
+
+  useEffect(() => {
+    const checkRoute = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith("#/blog/")) {
+        setRoute(hash.replace("#/blog/", ""));
+      } else {
+        setRoute("");
+      }
+    };
+    checkRoute();
+    window.addEventListener("hashchange", checkRoute);
+    return () => window.removeEventListener("hashchange", checkRoute);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -30,6 +47,26 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Blog post view — standalone page
+  if (route) {
+    return (
+      <ErrorBoundary>
+        <div className={`${darkMode && "dark"}`}>
+          {loading ? (
+            <PreLoader loading={loading} />
+          ) : (
+            <main className="bg-white dark:bg-[#0d0c0e] dark:text-white duration-700 ease-in-out">
+              <SkipToContent />
+              <Toaster position="top-center" reverseOrder={false} />
+              <HeaderNav darkMode={darkMode} setDarkMode={setDarkMode} />
+              <BlogPost postSlug={route} />
+            </main>
+          )}
+        </div>
+      </ErrorBoundary>
+    );
+  }
 
   return (
     <ErrorBoundary>
@@ -51,6 +88,7 @@ function App() {
             <About />
             <SkillsPage />
             <Projects />
+            <Blog />
             {/* <Certifications /> */}
             {/* <Testimonials /> */}
             <Contact />
