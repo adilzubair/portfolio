@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiArrowLeft, FiCalendar, FiClock } from "react-icons/fi";
 import { fullPosts, posts } from "./BlogData";
