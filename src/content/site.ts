@@ -128,8 +128,8 @@ export const experience: Role[] = [
     summary:
       "Hyperspectral imaging pipelines and ML research; co-authored two peer-reviewed papers.",
     highlights: [
-      "Built Python pipelines for processing and analysing hyperspectral imaging (HSI) data.",
-      "Kept datasets and experiments reproducible, and synthesised AI/ML literature across agriculture, environment and mining.",
+      "Co-authored “Modern Trends and Recent Applications of Hyperspectral Imaging” (Technologies, 2025), analyzing 150+ studies on ML/DL for classification and detection across healthcare, agriculture, remote sensing, and environmental monitoring.",
+      "Co-authored “Advancing Urban Development: Applications of Hyperspectral Imaging in Smart City Innovations and Sustainable Solutions” (Smart Cities, 2025), reviewing AI/IoT-enabled HSI for air and water quality, waste management, transportation, and energy, with focus on edge computing and real-time processing.",
     ],
   },
   {
