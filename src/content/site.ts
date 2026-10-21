@@ -27,7 +27,7 @@ export const site = {
   intro: [
     "I'm an AI engineer at Cyber Core Technology in Abu Dhabi. I build internal AI applications from implementation through deployment, and I run the GPU-backed Kubernetes cluster they're served from — installing GPU nodes, joining them to the cluster, and deploying and serving models on it.",
     "Before that, at Greentruth Technology, I built LLM-powered decision support on local models with evaluation pipelines and LoRA fine-tuning. Earlier I wrote Go and Python services at Cooee, optimized LLM inference on Intel CPUs with OpenVINO, and published two peer-reviewed papers on hyperspectral imaging as a research intern in Taiwan.",
-    "Outside work I build local-first AI tools, like Scout, a private launcher for Windows 11, and Loomin-Docs, a collaborative editor with a grounded AI assistant for air-gapped environments.",
+    "Outside work I build local-first AI tools, like FindIt, offline multimodal search that travels on an external drive; Scout, a private launcher for Windows 11; and Loomin-Docs, a collaborative editor with a grounded AI assistant for air-gapped environments.",
   ],
   socials: [
     { label: "GitHub", handle: "adilzubair", href: "https://github.com/adilzubair" },
@@ -167,9 +167,12 @@ export type Project = {
   stack: string[];
   repo?: string;
   live?: string;
+  // Shown instead of a source link, e.g. for a private repository.
+  status?: string;
   featured?: boolean;
 };
 
+// Featured projects lead with production-style AI work: retrieval, agents, on-device inference, deployment.
 export const projects: Project[] = [
   {
     slug: "cortex",
@@ -179,6 +182,26 @@ export const projects: Project[] = [
       "A RAG-based coding assistant orchestrated with LangGraph: a planner, explorer and builder sub-agents share tools over an incrementally indexed repo. SHA-256 change detection keeps re-indexing cheap, Jedi LSP adds static analysis for Python, and retrieval is reranked before it reaches the model. Runs on local models via Ollama or on OpenAI, across multiple projects.",
     stack: ["LangGraph", "LangChain", "Ollama", "ChromaDB", "Jedi LSP", "Python"],
     repo: "https://github.com/adilzubair/cortex",
+    featured: true,
+  },
+  {
+    slug: "findit",
+    title: "FindIt",
+    tagline: "Offline multimodal search that travels with your drive",
+    description:
+      "Prepare an external drive once, then search its photos, videos, documents and audio offline on any Windows PC — the app, models and index travel with the drive. On-device EmbeddingGemma 2 puts text, images, video and audio in one vector space; USearch ANN and SQLite full-text results are merged with reciprocal rank fusion. Whisper transcribes speech with offline voice-activity detection, face matching enables named-people search, and a benchmark tool measures retrieval against exhaustive search at scale.",
+    stack: ["C# / .NET", "EmbeddingGemma 2", "Whisper", "USearch", "SQLite FTS5"],
+    status: "Private preview",
+    featured: true,
+  },
+  {
+    slug: "loomin-docs",
+    title: "Loomin-Docs",
+    tagline: "Collaborative writing with a grounded AI assistant, fully air-gapped",
+    description:
+      "An offline-first collaborative editor for air-gapped environments: real-time TipTap editing over websockets, an AI sidebar grounded in uploaded PDFs and notes via FAISS retrieval, PII masking before prompt assembly, and switchable Ollama models. Ships as an offline Docker bundle for a clean RHEL 9 VM, with a deterministic RAG faithfulness check.",
+    stack: ["FastAPI", "React", "Ollama", "FAISS", "Docker", "RHEL 9"],
+    repo: "https://github.com/adilzubair/Loomin-Docs",
     featured: true,
   },
   {
@@ -193,24 +216,49 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "loomin-docs",
-    title: "Loomin-Docs",
-    tagline: "Collaborative writing with a grounded AI assistant, fully air-gapped",
+    slug: "ai-harness-basics",
+    title: "AI Harness Basics",
+    tagline: "An agent harness, built up in five runnable stages",
     description:
-      "An offline-first collaborative editor for air-gapped environments: real-time TipTap editing over websockets, an AI sidebar grounded in uploaded PDFs and notes via FAISS retrieval, PII masking before prompt assembly, and switchable Ollama models. Ships as an offline Docker bundle for a clean RHEL 9 VM, with a deterministic RAG faithfulness check.",
-    stack: ["FastAPI", "React", "Ollama", "FAISS", "Docker", "RHEL 9"],
-    repo: "https://github.com/adilzubair/Loomin-Docs",
-    featured: true,
+      "A Python take on TejasQ's basically-ai-harness: a raw tool-using loop, then guardrails and context trimming, a harness that owns the environment, verification with retries, and deterministic recovery logic.",
+    stack: ["Python", "Agents"],
+    repo: "https://github.com/adilzubair/AI-harness-basics",
+  },
+  {
+    slug: "agents-from-scratch",
+    title: "Agents from Scratch",
+    tagline: "Agent design patterns, built from the ground up in Python",
+    description:
+      "Building blocks and workflows for AI agents: tool use, retrieval, structured outputs, prompt chaining, routing, parallelization and orchestration.",
+    stack: ["Python", "LLMs"],
+    repo: "https://github.com/adilzubair/agents-from-scratch",
+  },
+  {
+    slug: "fine-tuning",
+    title: "Phi-3 Medical QLoRA",
+    tagline: "QLoRA fine-tuning of small LLMs on consumer GPUs",
+    description:
+      "QLoRA fine-tunes of Phi-3-mini on medical Q&A with 4-bit quantization, training ~1% of parameters; companion experiments cover LoRA instruction-tuning of GPT-2 Medium and PEFT versus full fine-tuning on DistilBERT.",
+    stack: ["PyTorch", "Hugging Face PEFT", "QLoRA", "bitsandbytes"],
+    repo: "https://github.com/adilzubair/phi3-medical-qlora",
+  },
+  {
+    slug: "openvino-llm",
+    title: "TinyLlama on Intel CPUs",
+    tagline: "OpenVINO-optimised LLM chatbot for Intel AI laptops",
+    description:
+      "Converts and compresses TinyLlama to OpenVINO for CPU inference, served through a Gradio chat UI with tunable temperature, top-p, top-k and repetition penalty. Built during the Intel industrial training.",
+    stack: ["OpenVINO", "Python", "Gradio"],
+    repo: "https://github.com/adilzubair/Bitmasters_Intel_LLM",
   },
   {
     slug: "local-rag",
-    title: "Local Agentic RAG",
-    tagline: "Offline question answering over private documents",
+    title: "Local RAG Agents",
+    tagline: "Agentic RAG experiments: Docling parsing, LangGraph, FastAPI",
     description:
-      "A fully local RAG stack that runs Mistral and Phi-3 through Ollama, so private enterprise documents never leave the machine. A LangGraph agent only answers from retrieved context and declines otherwise, backed by a chunking and embedding pipeline tuned for specialised knowledge.",
-    stack: ["LangGraph", "LangChain", "Ollama", "ChromaDB", "Python"],
+      "A set of local RAG systems running Mistral and Phi-3 through Ollama: an agentic chat with semantic chunking over ChromaDB, a Docling-based multi-format document agent with LangGraph, and streaming and Wikipedia-sourced variants.",
+    stack: ["LangGraph", "LangChain", "Docling", "ChromaDB", "FastAPI"],
     repo: "https://github.com/adilzubair/local-rag-agents",
-    featured: true,
   },
   {
     slug: "prism",
@@ -220,7 +268,6 @@ export const projects: Project[] = [
       "A full-stack chat platform with streaming responses, image input, conversation memory and switching between OpenAI and Gemini. Every request is metered so token usage and API cost are visible per user, with JWT-isolated conversations on a React, Radix and Tailwind frontend.",
     stack: ["FastAPI", "React", "TypeScript", "OpenAI", "Gemini"],
     repo: "https://github.com/adilzubair/switch-chat",
-    featured: true,
   },
   {
     slug: "odin",
@@ -239,60 +286,6 @@ export const projects: Project[] = [
       "Creates a deck from a prompt using any OpenAI-compatible model, keeps each slide as editable React source, and exports to HTML, PDF or PowerPoint.",
     stack: ["TypeScript", "React", "pnpm + Turbo"],
     repo: "https://github.com/adilzubair/deckspring",
-  },
-  {
-    slug: "agents-from-scratch",
-    title: "Agents from Scratch",
-    tagline: "Agent design patterns, built from the ground up in Python",
-    description:
-      "Building blocks and workflows for AI agents: tool use, retrieval, structured outputs, prompt chaining, routing, parallelization and orchestration.",
-    stack: ["Python", "LLMs"],
-    repo: "https://github.com/adilzubair/agents-from-scratch",
-  },
-  {
-    slug: "fine-tuning",
-    title: "Phi-3 Medical QLoRA",
-    tagline: "Fine-tuning small LLMs on consumer GPUs",
-    description:
-      "QLoRA fine-tunes of Phi-3-mini and GPT-2 Medium with 4-bit quantization, training ~1% of parameters, plus a comparison of full fine-tuning against PEFT on memory and convergence.",
-    stack: ["PyTorch", "Hugging Face PEFT", "QLoRA", "bitsandbytes"],
-    repo: "https://github.com/adilzubair/phi3-medical-qlora",
-  },
-  {
-    slug: "transformer",
-    title: "Transformer Lab",
-    tagline: "A GPT-style transformer, from scratch",
-    description:
-      "Multi-head self-attention, positional embeddings, residual blocks, character-level tokenization and autoregressive decoding.",
-    stack: ["PyTorch"],
-    repo: "https://github.com/adilzubair/transformer-lab",
-  },
-  {
-    slug: "quickeval",
-    title: "QuickEval",
-    tagline: "AI-assisted grading for student answer sheets",
-    description:
-      "Evaluates student answer sheets with the OpenAI API, attaching a confidence level and remarks to each score and generating evaluation reports, so grading is faster and more consistent.",
-    stack: ["React", "Node.js", "MongoDB", "OpenAI"],
-    repo: "https://github.com/adilzubair/QuickEval",
-  },
-  {
-    slug: "crashchain",
-    title: "Crashchain",
-    tagline: "Tamper-proof vehicle crash forensics on Ethereum",
-    description:
-      "Captures OBD telemetry and crash footage, anchors it with Ethereum smart contracts for verification, and flags anomalies on an investigator dashboard.",
-    stack: ["Node.js", "Ethereum", "Web3.js", "Truffle"],
-    repo: "https://github.com/Project-SCE/Crashchain",
-  },
-  {
-    slug: "foodbot",
-    title: "FoodBot",
-    tagline: "WhatsApp ordering bot — Yukthi 2024 winner",
-    description:
-      "A GPT-powered WhatsApp assistant for restaurant ordering backed by REST services. Won the Yukthi 2024 hackathon.",
-    stack: ["Python", "OpenAI", "WhatsApp API"],
-    repo: "https://github.com/adilzubair/Yukthi_hackathon",
   },
 ];
 
