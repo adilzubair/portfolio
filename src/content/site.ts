@@ -281,11 +281,12 @@ export const projects: Project[] = [
   {
     slug: "deckspring",
     title: "Deckspring",
-    tagline: "Generate and refine slide decks locally with your own model",
+    tagline: "Create and edit slide decks with AI — hosted or local",
     description:
-      "Creates a deck from a prompt using any OpenAI-compatible model, keeps each slide as editable React source, and exports to HTML, PDF or PowerPoint.",
+      "Generates a deck from a prompt, keeps each slide as editable React source, and exports to HTML, PDF or editable PowerPoint. Run it locally with any OpenAI-compatible model, or use the hosted version with a private deck library.",
     stack: ["TypeScript", "React", "pnpm + Turbo"],
     repo: "https://github.com/adilzubair/deckspring",
+    live: "https://deckspring.muhamedadil.com/",
   },
 ];
 
