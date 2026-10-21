@@ -155,92 +155,118 @@ function Scout() {
 }
 
 // Deterministic scatter so prerendered output never changes between builds.
-function scatter(n: number, seed: number) {
+function scatter(n: number, seed: number, box: { x: number; y: number; w: number; h: number }) {
   let s = seed;
   const rand = () => ((s = (s * 16807) % 2147483647) - 1) / 2147483646;
-  return Array.from({ length: n }, () => ({ x: 860 + rand() * 640, y: 150 + rand() * 700 }));
+  return Array.from({ length: n }, () => ({ x: box.x + rand() * box.w, y: box.y + rand() * box.h }));
 }
 
-// Documents chunked into a vector space, the query pulling its nearest neighbours.
-function LocalRag() {
-  const pts = scatter(46, 7);
-  const q = { x: 1170, y: 470 };
-  const near = [...pts]
-    .sort((a, b) => Math.hypot(a.x - q.x, a.y - q.y) - Math.hypot(b.x - q.x, b.y - q.y))
-    .slice(0, 4);
-  return (
-    <g>
-      {[0, 1, 2].map((i) => (
-        <g key={i} transform={`translate(${120 + i * 34} ${260 + i * 40})`}>
-          <path d="M0 0 h210 l60 60 v300 h-270 z" className="fill-bg stroke-line" strokeWidth={2} />
-          <path d="M210 0 v60 h60" className="fill-none stroke-line" strokeWidth={2} />
-          {[110, 150, 190, 230, 270].map((y, j) => (
-            <rect key={y} x={34} y={y} width={j % 2 ? 150 : 200} height={12} rx={6} className={i === 2 && j === 2 ? "fill-accent" : "fill-line"} />
-          ))}
-        </g>
-      ))}
-      <path d={`M520 500 C 700 500, 800 ${q.y}, ${q.x - 190} ${q.y}`} className="art-dash fill-none stroke-accent" strokeWidth={3} />
-      <circle cx={q.x} cy={q.y} r={190} className="fill-accent" opacity={0.06} />
-      <circle cx={q.x} cy={q.y} r={190} className="fill-none stroke-accent" strokeWidth={2} strokeDasharray="6 10" />
-      {pts.map((p, i) => (
-        <circle key={i} cx={p.x} cy={p.y} r={near.includes(p) ? 11 : 8} className={near.includes(p) ? "fill-fg" : "fill-faint"} opacity={near.includes(p) ? 1 : 0.55} />
-      ))}
-      {near.map((p, i) => (
-        <line key={i} x1={q.x} y1={q.y} x2={p.x} y2={p.y} className="stroke-fg" strokeWidth={2.5} opacity={0.7} />
-      ))}
-      <circle cx={q.x} cy={q.y} r={20} className="art-pulse fill-accent" />
-      <Label x={q.x} y={q.y - 214} className="fill-accent">
-        query · top-4
-      </Label>
-      <Label x={250} y={760}>
-        private docs
-      </Label>
-      <Chip x={1090} y={888}>grounded only</Chip>
-      <Chip x={60} y={60}>offline · ollama</Chip>
-    </g>
-  );
-}
-
-// One request refracted into multiple models and modalities.
-function Prism() {
-  const rays = [
-    { y: 230, label: "openai" },
-    { y: 390, label: "gemini" },
-    { y: 550, label: "vision" },
-    { y: 710, label: "streaming" },
-    { y: 860, label: "cost / user" },
+// A portable drive whose photos, video, documents, audio and faces share one vector space.
+function FindIt() {
+  const tiles = [
+    { y: 230, label: "photo" },
+    { y: 360, label: "video" },
+    { y: 490, label: "document" },
+    { y: 620, label: "audio" },
+    { y: 750, label: "face" },
   ];
+  const tx = 430;
+  const space = { cx: 1150, cy: 560, r: 230 };
+  const pts = scatter(40, 11, { x: space.cx - 190, y: space.cy - 170, w: 380, h: 340 }).filter(
+    (p) => Math.hypot(p.x - space.cx, p.y - space.cy) < space.r - 24,
+  );
+  const hits = pts.slice(0, 3);
+
   return (
     <g>
-      <line x1={0} y1={560} x2={600} y2={520} className="stroke-fg" strokeWidth={6} opacity={0.85} />
-      {rays.map((r, i) => (
-        <g key={r.label}>
-          <line
-            x1={760}
-            y1={520}
-            x2={1330}
-            y2={r.y}
-            className="art-dash stroke-accent"
-            strokeWidth={4}
-            opacity={1 - i * 0.14}
-            style={{ animationDelay: `${i * -0.3}s` }}
+      {/* Drive */}
+      <rect x={90} y={380} width={190} height={260} rx={28} className="fill-bg stroke-line" strokeWidth={2} />
+      <rect x={120} y={420} width={130} height={14} rx={7} className="fill-line" />
+      <rect x={120} y={448} width={90} height={14} rx={7} className="fill-line" />
+      <circle cx={245} cy={600} r={9} className="art-pulse fill-accent" />
+      <Label x={185} y={690}>
+        portable drive
+      </Label>
+      {tiles.map((t) => (
+        <path
+          key={`in-${t.label}`}
+          d={`M280 510 C 340 510, 350 ${t.y + 40}, ${tx} ${t.y + 40}`}
+          className="fill-none stroke-line"
+          strokeWidth={2}
+        />
+      ))}
+
+      {/* Modality tiles */}
+      {tiles.map((t, i) => (
+        <g key={t.label}>
+          <rect x={tx} y={t.y} width={230} height={80} rx={18} className="fill-bg stroke-line" strokeWidth={2} />
+          <g transform={`translate(${tx + 22} ${t.y + 18})`}>
+            {i === 0 && (
+              <>
+                <rect width={44} height={44} rx={8} className="fill-accent-soft stroke-accent" strokeWidth={2} />
+                <path d="M6 36 l12 -14 9 9 6 -6 6 11 z" className="fill-accent" />
+              </>
+            )}
+            {i === 1 && (
+              <>
+                <rect width={44} height={44} rx={8} className="fill-accent-soft stroke-accent" strokeWidth={2} />
+                <path d="M17 13 l14 9 -14 9 z" className="fill-accent" />
+              </>
+            )}
+            {i === 2 &&
+              [8, 18, 28].map((y) => <rect key={y} x={4} y={y} width={y === 28 ? 24 : 36} height={6} rx={3} className="fill-accent" />)}
+            {i === 3 &&
+              [16, 30, 10, 36, 22, 14, 28].map((h, j) => (
+                <rect key={j} x={j * 6.5} y={22 - h / 2} width={4} height={h} rx={2} className="fill-accent" />
+              ))}
+            {i === 4 && (
+              <>
+                <circle cx={22} cy={15} r={10} className="fill-accent" />
+                <path d="M4 44 c0 -14 36 -14 36 0 z" className="fill-accent" />
+              </>
+            )}
+          </g>
+          <text x={tx + 84} y={t.y + 50} className="fill-fg font-sans text-[30px]">
+            {t.label}
+          </text>
+          <path
+            d={`M${tx + 230} ${t.y + 40} C ${tx + 340} ${t.y + 40}, ${space.cx - 300} ${space.cy}, ${space.cx - space.r} ${space.cy}`}
+            className="art-dash fill-none stroke-accent"
+            strokeWidth={2.5}
+            opacity={0.75}
+            style={{ animationDelay: `${i * -0.25}s` }}
           />
-          <circle cx={1330} cy={r.y} r={10} className="fill-accent" opacity={1 - i * 0.14} />
-          <Label x={1360} y={r.y + 9} anchor="start" className="fill-fg">
-            {r.label}
-          </Label>
         </g>
       ))}
-      <path d="M680 250 L880 700 L480 700 Z" className="fill-bg stroke-fg" strokeWidth={3} strokeLinejoin="round" />
-      <path d="M680 250 L880 700 L480 700 Z" className="fill-accent" opacity={0.08} />
-      <path d="M680 330 L800 610" className="stroke-line" strokeWidth={2} />
-      <Label x={680} y={770}>
-        one chat
+
+      {/* Shared embedding space */}
+      <circle cx={space.cx} cy={space.cy} r={space.r} className="fill-accent" opacity={0.05} />
+      <circle cx={space.cx} cy={space.cy} r={space.r} className="fill-none stroke-accent" strokeWidth={2} strokeDasharray="6 10" />
+      {pts.map((p, i) => (
+        <circle key={i} cx={p.x} cy={p.y} r={hits.includes(p) ? 12 : 7} className={hits.includes(p) ? "fill-accent" : "fill-faint"} opacity={hits.includes(p) ? 1 : 0.6} />
+      ))}
+      <Label x={space.cx} y={space.cy + space.r + 44} className="fill-accent">
+        one vector space
       </Label>
-      <Chip x={60} y={60}>fastapi · react</Chip>
+
+      {/* Query */}
+      <rect x={890} y={120} width={560} height={84} rx={42} className="fill-bg stroke-line" strokeWidth={2} />
+      <circle cx={940} cy={160} r={16} className="fill-none stroke-accent" strokeWidth={5} />
+      <line x1={951} y1={171} x2={966} y2={186} className="stroke-accent" strokeWidth={5} strokeLinecap="round" />
+      <text x={985} y={173} className="fill-fg font-sans text-[32px]">
+        sunset at the harbour
+      </text>
+      <rect x={1314} y={142} width={3} height={38} className="art-blink fill-accent" />
+      {hits.map((h, i) => (
+        <line key={i} x1={1170} y1={204} x2={h.x} y2={h.y} className="stroke-fg" strokeWidth={2} opacity={0.35} />
+      ))}
+
+      <Chip x={1060} y={900}>ann + full-text · rrf</Chip>
+      <Chip x={60} y={60}>offline · on-device models</Chip>
     </g>
   );
 }
+
 
 // Collaborative document with a grounded AI sidebar, air-gapped.
 function Loomin() {
@@ -301,7 +327,6 @@ function Fallback({ title }: { title: string }) {
 const ARTS: Record<string, () => ReactNode> = {
   cortex: Cortex,
   scout: Scout,
-  "local-rag": LocalRag,
-  prism: Prism,
+  findit: FindIt,
   "loomin-docs": Loomin,
 };

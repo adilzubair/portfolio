@@ -263,7 +263,7 @@ function Hero() {
   const countries = new Set(experience.map((r) => r.location.split(", ").at(-1))).size;
   const stats = [
     { value: experience.length, label: "roles in AI, backend and research" },
-    { value: projects.length, label: "open-source projects" },
+    { value: projects.filter((p) => p.repo).length, label: "open-source projects" },
     { value: publications.length, label: "peer-reviewed papers" },
     { value: countries, label: "countries worked across" },
   ];
@@ -407,22 +407,26 @@ function Marquee({ items }: { items: string[] }) {
 
 function FeaturedProject({ project: p, index }: { project: Project; index: number }) {
   const flip = index % 2 === 1;
+  const href = p.live ?? p.repo;
+  const frame =
+    "group block overflow-hidden rounded-2xl border border-line bg-surface shadow-[0_30px_60px_-40px_rgba(0,0,0,0.45)] transition-transform duration-500 hover:-translate-y-1";
+  const art = (
+    <div className="aspect-[16/10] overflow-hidden transition-transform duration-700 group-hover:scale-[1.02]">
+      <ProjectArt slug={p.slug} title={p.title} />
+    </div>
+  );
 
   return (
     <article id={`project-${p.slug}`} className="grid items-center gap-8 lg:grid-cols-12 lg:gap-14">
       <Reveal className={`lg:col-span-7 ${flip ? "lg:order-2" : ""}`}>
         <Spotlight className="rounded-2xl">
-          <a
-            href={p.live ?? p.repo}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={p.title}
-            className="group block overflow-hidden rounded-2xl border border-line bg-surface shadow-[0_30px_60px_-40px_rgba(0,0,0,0.45)] transition-transform duration-500 hover:-translate-y-1"
-          >
-            <div className="aspect-[16/10] overflow-hidden transition-transform duration-700 group-hover:scale-[1.02]">
-              <ProjectArt slug={p.slug} title={p.title} />
-            </div>
-          </a>
+          {href ? (
+            <a href={href} target="_blank" rel="noopener noreferrer" aria-label={p.title} className={frame}>
+              {art}
+            </a>
+          ) : (
+            <div className={frame}>{art}</div>
+          )}
         </Spotlight>
       </Reveal>
 
@@ -439,6 +443,12 @@ function FeaturedProject({ project: p, index }: { project: Project; index: numbe
         <div className="mt-6 flex items-center gap-5 text-sm">
           {p.live && <ProjectLink href={p.live}>Visit site</ProjectLink>}
           {p.repo && <ProjectLink href={p.repo}>Source code</ProjectLink>}
+          {p.status && (
+            <span className="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 font-mono text-xs text-muted">
+              <span className="size-1.5 rounded-full bg-accent" aria-hidden />
+              {p.status}
+            </span>
+          )}
         </div>
       </Reveal>
     </article>
