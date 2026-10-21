@@ -46,7 +46,7 @@
 html {
   background: var(--bg);
   color: var(--fg);
-  scroll-padding-top: 5rem;
+  scroll-padding-top: calc(5rem + env(safe-area-inset-top));
   -webkit-text-size-adjust: 100%;
 }
 
@@ -60,6 +60,8 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
+  /* Keeps content clear of the notch in landscape now that the page is drawn edge to edge. */
+  padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
 }
 
 /* Slightly softened Fraunces terminals for a warmer display face. */

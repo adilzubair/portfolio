@@ -271,7 +271,7 @@ function Hero() {
   return (
     // Clip only sideways so the backdrop runs up behind the floating header instead of stopping under it.
     <section className="relative overflow-x-clip">
-      <div className="dot-grid pointer-events-none absolute inset-x-0 -top-20 bottom-0" aria-hidden />
+      <div className="dot-grid pointer-events-none absolute inset-x-0 bottom-0 top-[calc(-5rem_-_env(safe-area-inset-top))]" aria-hidden />
       <div className="glow pointer-events-none absolute -right-56 -top-56 size-[46rem]" aria-hidden />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 pb-16 pt-12 sm:px-8 sm:pt-20 lg:grid-cols-[1fr_auto] lg:gap-20 lg:pb-24 lg:pt-24">

@@ -10,7 +10,7 @@ async function Year() {
 export function Footer() {
   return (
     <footer className="border-t border-line">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 pt-8 pb-[calc(2rem_+_env(safe-area-inset-bottom))] text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <p>
           © <Year /> {site.fullName}
         </p>

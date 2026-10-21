@@ -60,8 +60,9 @@ export function Header({ showWriting }: { showWriting: boolean }) {
 
   // The pill itself is the sticky element, inset from the top edge. A full-width transparent bar at top: 0
   // gets picked up by iOS Safari to tint the status bar, which shows as a black strip above the pill.
+  // The safe-area inset keeps it below the status bar, since the page is drawn underneath it (viewportFit: cover).
   return (
-    <header className="sticky top-3 z-40 mx-auto mt-3 w-fit max-w-[calc(100%-1.5rem)] sm:top-4 sm:mt-4">
+    <header className="sticky top-[calc(env(safe-area-inset-top)_+_0.75rem)] z-40 mx-auto mt-[calc(env(safe-area-inset-top)_+_0.75rem)] w-fit max-w-[calc(100%-1.5rem)] sm:top-[calc(env(safe-area-inset-top)_+_1rem)] sm:mt-[calc(env(safe-area-inset-top)_+_1rem)]">
       <div
         className={`relative flex items-center gap-1 overflow-hidden rounded-full border p-1.5 backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300 ${
           scrolled

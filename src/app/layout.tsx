@@ -83,6 +83,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
+  // Draw edge to edge, under the iPhone status bar; globals.css and the header pad by the safe-area insets.
+  viewportFit: "cover",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#fafaf8" },
     { media: "(prefers-color-scheme: dark)", color: "#0d0d0c" },
