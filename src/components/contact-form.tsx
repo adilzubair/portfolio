@@ -7,8 +7,9 @@ import { ArrowRight, Check } from "./icons";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
+// 16px on phones: iOS Safari zooms the page into any field with smaller text.
 const field =
-  "w-full rounded-lg border border-line bg-surface px-3.5 py-2.5 text-[15px] text-fg placeholder:text-faint transition-colors focus:border-accent focus:outline-none";
+  "w-full rounded-lg border border-line bg-surface px-3.5 py-2.5 text-base text-fg sm:text-[15px] placeholder:text-faint transition-colors focus:border-accent focus:outline-none";
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");

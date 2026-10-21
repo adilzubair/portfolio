@@ -269,8 +269,9 @@ function Hero() {
   ];
 
   return (
-    <section className="relative overflow-hidden">
-      <div className="dot-grid pointer-events-none absolute inset-0" aria-hidden />
+    // Clip only sideways so the backdrop runs up behind the floating header instead of stopping under it.
+    <section className="relative overflow-x-clip">
+      <div className="dot-grid pointer-events-none absolute inset-x-0 -top-20 bottom-0" aria-hidden />
       <div className="glow pointer-events-none absolute -right-56 -top-56 size-[46rem]" aria-hidden />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 pb-16 pt-12 sm:px-8 sm:pt-20 lg:grid-cols-[1fr_auto] lg:gap-20 lg:pb-24 lg:pt-24">
@@ -364,7 +365,7 @@ function Portrait() {
           alt={`Illustrated portrait of ${site.name}`}
           loading="eager"
           fetchPriority="high"
-          sizes="(min-width: 1024px) 320px, 288px"
+          sizes="(min-width: 1024px) 320px, (min-width: 640px) 288px, 208px"
           className="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
         />
       </div>
@@ -386,7 +387,7 @@ function Portrait() {
 
 function Marquee({ items }: { items: string[] }) {
   return (
-    <div className="marquee relative overflow-hidden border-y border-line bg-surface/60 py-4 backdrop-blur-sm">
+    <div className="marquee relative overflow-hidden border-y border-line bg-surface/70 py-4">
       <div className="marquee-track flex w-max">
         {[...items, ...items].map((t, i) => (
           <span
@@ -410,8 +411,9 @@ function FeaturedProject({ project: p, index }: { project: Project; index: numbe
   const href = p.live ?? p.repo;
   const frame =
     "group block overflow-hidden rounded-2xl border border-line bg-surface shadow-[0_30px_60px_-40px_rgba(0,0,0,0.45)] transition-transform duration-500 hover:-translate-y-1";
+  // content-visibility lets the browser skip painting and animating the art while it is off-screen.
   const art = (
-    <div className="aspect-[16/10] overflow-hidden transition-transform duration-700 group-hover:scale-[1.02]">
+    <div className="aspect-[16/10] overflow-hidden [content-visibility:auto] transition-transform duration-700 group-hover:scale-[1.02]">
       <ProjectArt slug={p.slug} title={p.title} />
     </div>
   );

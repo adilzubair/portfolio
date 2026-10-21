@@ -60,7 +60,6 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
-  text-rendering: optimizeLegibility;
 }
 
 /* Slightly softened Fraunces terminals for a warmer display face. */
