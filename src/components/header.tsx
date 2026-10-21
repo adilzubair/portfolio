@@ -58,10 +58,12 @@ export function Header({ showWriting }: { showWriting: boolean }) {
     return () => window.removeEventListener("resize", measure);
   }, [active]);
 
+  // The pill itself is the sticky element, inset from the top edge. A full-width transparent bar at top: 0
+  // gets picked up by iOS Safari to tint the status bar, which shows as a black strip above the pill.
   return (
-    <header className="pointer-events-none sticky top-0 z-40 flex justify-center px-3 pt-3 sm:pt-4">
+    <header className="sticky top-3 z-40 mx-auto mt-3 w-fit max-w-[calc(100%-1.5rem)] sm:top-4 sm:mt-4">
       <div
-        className={`pointer-events-auto relative flex items-center gap-1 overflow-hidden rounded-full border p-1.5 backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300 ${
+        className={`relative flex items-center gap-1 overflow-hidden rounded-full border p-1.5 backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300 ${
           scrolled
             ? "border-line bg-surface/80 shadow-[0_12px_40px_-16px_rgba(0,0,0,0.35)]"
             : "border-line/70 bg-surface/55 shadow-[0_8px_30px_-20px_rgba(0,0,0,0.25)]"
