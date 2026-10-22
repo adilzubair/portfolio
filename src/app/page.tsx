@@ -260,12 +260,12 @@ export default function Home() {
 
 function Hero() {
   const current = experience[0];
-  const countries = new Set(experience.map((r) => r.location.split(", ").at(-1))).size;
+  // Outcomes quoted from the experience entries below; keep them in sync with site.ts.
   const stats = [
-    { value: experience.length, label: "roles in AI, backend and research" },
-    { value: projects.filter((p) => p.repo).length, label: "open-source projects" },
-    { value: publications.length, label: "peer-reviewed papers" },
-    { value: countries, label: "countries worked across" },
+    { value: 90, suffix: "%", label: "lower notification latency after reworking async queues at Cooee" },
+    { value: 40, suffix: "%", label: "faster database responses from query and schema tuning" },
+    { value: 150, suffix: "+", label: `studies analysed across ${publications.length} peer-reviewed papers` },
+    { value: projects.filter((p) => p.repo).length, suffix: "", label: "open-source projects, from RAG to agents to local inference" },
   ];
 
   return (
@@ -343,15 +343,13 @@ function Hero() {
         <Portrait />
       </div>
 
-      <Marquee items={site.marquee} />
-
       <div className="relative mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
         <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line lg:grid-cols-4">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 80} className="flex flex-col-reverse justify-end bg-bg p-6 sm:p-8">
               <dt className="mt-2 text-sm leading-snug text-muted">{s.label}</dt>
               <dd className="font-serif text-5xl leading-none sm:text-6xl">
-                <CountUp value={s.value} />
+                <CountUp value={s.value} suffix={s.suffix} />
               </dd>
             </Reveal>
           ))}
@@ -392,27 +390,6 @@ function Portrait() {
   );
 }
 
-function Marquee({ items }: { items: string[] }) {
-  return (
-    <div className="marquee relative overflow-hidden border-y border-line bg-surface/70 py-4">
-      <div className="marquee-track flex w-max">
-        {[...items, ...items].map((t, i) => (
-          <span
-            key={i}
-            aria-hidden={i >= items.length ? true : undefined}
-            className="flex items-center gap-8 pr-8 font-mono text-[13px] uppercase tracking-[0.16em] text-muted"
-          >
-            {t}
-            <span className="text-accent" aria-hidden>
-              ✦
-            </span>
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function FeaturedProject({ project: p, index }: { project: Project; index: number }) {
   const flip = index % 2 === 1;
   const href = p.live ?? p.repo;
@@ -421,7 +398,18 @@ function FeaturedProject({ project: p, index }: { project: Project; index: numbe
   // content-visibility lets the browser skip painting and animating the art while it is off-screen.
   const art = (
     <div className="aspect-[16/10] overflow-hidden [content-visibility:auto] transition-transform duration-700 group-hover:scale-[1.02]">
-      <ProjectArt slug={p.slug} title={p.title} />
+      {p.image ? (
+        <Image
+          src={p.image.src}
+          width={p.image.width}
+          height={p.image.height}
+          alt={p.image.alt}
+          sizes="(min-width: 1024px) 700px, 100vw"
+          className="size-full object-cover object-top"
+        />
+      ) : (
+        <ProjectArt slug={p.slug} title={p.title} />
+      )}
     </div>
   );
 

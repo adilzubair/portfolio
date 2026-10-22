@@ -22,8 +22,6 @@ export const site = {
   // Large pull-quote at the top of the About section.
   statement:
     "Models are the easy part. I work on everything around them — grounding, evaluation, serving, and the GPUs underneath.",
-  // Scrolling strip under the hero.
-  marquee: ["LangGraph", "RAG", "Ollama", "Kubernetes", "GPU serving", "FastAPI", "QLoRA", "PyTorch", "Go", "Python", "OpenVINO", "ChromaDB", "Docker", "Evaluation"],
   intro: [
     "I'm an AI engineer at Cyber Core Technology in Abu Dhabi. I build internal AI applications from implementation through deployment, and I run the GPU-backed Kubernetes cluster they're served from — installing GPU nodes, joining them to the cluster, and deploying and serving models on it.",
     "Before that, at Greentruth Technology, I built LLM-powered decision support on local models with evaluation pipelines and LoRA fine-tuning. Earlier I wrote Go and Python services at Cooee, optimized LLM inference on Intel CPUs with OpenVINO, and published two peer-reviewed papers on hyperspectral imaging as a research intern in Taiwan.",
@@ -40,24 +38,9 @@ export const site = {
     "Mohamed Adil",
     "Mohammed Adil",
     "Muhammad Adil",
-    "Mohammad Adil",
     "Muhamed Adhil",
     "Muhammed Adhil",
-    "Mohamed Adhil",
-    "Mohammed Adhil",
-    "Muhammad Adhil",
-    "Mohammad Adhil",
     "Muhammed Adil Edavana Valappil",
-    "Mohamed Adil Edavana Valappil",
-    "Mohammed Adil Edavana Valappil",
-    "Muhammad Adil Edavana Valappil",
-    "Mohammad Adil Edavana Valappil",
-    "Muhamed Adhil Edavana Valappil",
-    "Muhammed Adhil Edavana Valappil",
-    "Mohamed Adhil Edavana Valappil",
-    "Mohammed Adhil Edavana Valappil",
-    "Muhammad Adhil Edavana Valappil",
-    "Mohammad Adhil Edavana Valappil",
   ],
   contactFormEndpoint: "https://getform.io/f/aqomozwa",
 };
@@ -170,6 +153,9 @@ export type Project = {
   // Shown instead of a source link, e.g. for a private repository.
   status?: string;
   featured?: boolean;
+  // Real screenshot shown in place of the generated illustration. Drop the file in public/images/projects/
+  // and set width/height to its pixel size (16:10 crops best).
+  image?: { src: string; width: number; height: number; alt: string };
 };
 
 // Featured projects lead with production-style AI work: retrieval, agents, on-device inference, deployment.

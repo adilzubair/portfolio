@@ -1,6 +1,6 @@
 ---
 title: How Cortex Reads Your Code Like You Do
-description: Building an AI coding assistant that actually understands your codebase — from incremental SHA-256 indexing and LSP-powered static analysis to semantic search with reranking. Multi-agent orchestration with LangGraph, zero hallucinations.
+description: Building an AI coding assistant that actually understands your codebase — from incremental SHA-256 indexing and LSP-powered static analysis to semantic search with reranking. Multi-agent orchestration with LangGraph, and answers grounded in what was actually retrieved.
 date: 2026-04-06
 tags: [RAG, LangGraph, AI, Python]
 ---
@@ -23,9 +23,9 @@ Raw text isn't enough. Cortex integrates with the Language Server Protocol to un
 
 Cortex doesn't use a single monolithic agent. Instead, it orchestrates specialized agents through LangGraph — one for semantic search with reranking, one for static analysis, another for code generation. Each agent has a defined role and they collaborate through structured messages. Think of it like a dev team, not a solo junior.
 
-## Zero Hallucinations by Design
+## Grounding as a Design Rule
 
-Every response is grounded in retrieved context. If the agents can't find relevant information, they say so — no made-up functions or imaginary APIs. This strict grounding is non-negotiable for a developer tool. You can't ship code based on an AI hallucination.
+Every response is built from retrieved context, and the agents are instructed to say so when they can't find what they need, rather than guess at functions or APIs. That doesn't make hallucination impossible: a model can still misread good context. It does make failures easier to spot, because each claim traces back to a file and a symbol you can open and check. For a developer tool, that traceability matters more than a promise of perfection.
 
 ---
 
