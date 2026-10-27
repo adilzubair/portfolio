@@ -191,7 +191,8 @@ export const projects: Project[] = [
     description:
       "Prepare an external drive once, then search its photos, videos, documents and audio offline on any Windows PC — the app, models and index travel with the drive. On-device EmbeddingGemma 2 puts text, images, video and audio in one vector space; USearch ANN and SQLite full-text results are merged with reciprocal rank fusion. Whisper transcribes speech with offline voice-activity detection, face matching enables named-people search, and a benchmark tool measures retrieval against exhaustive search at scale.",
     stack: ["C# / .NET", "EmbeddingGemma 2", "Whisper", "USearch", "SQLite FTS5"],
-    status: "Private preview",
+    repo: "https://github.com/adilzubair/FindIt",
+    live: "https://findit.muhamedadil.com/",
     featured: true,
   },
   {
